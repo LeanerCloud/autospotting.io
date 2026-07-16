@@ -125,7 +125,7 @@
         window.addEventListener('load', function () {
             if (location.hash) {
                 var el = document.getElementById(location.hash.slice(1));
-                if (el) requestAnimationFrame(function () { el.scrollIntoView(); });
+                if (el) requestAnimationFrame(function () { el.scrollIntoView({ behavior: 'instant', block: 'start' }); });
             }
         });
     </script>
