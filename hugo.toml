@@ -69,10 +69,8 @@ enableGitInfo = true
   # Default social sharing image (og:image / twitter:image fallback)
   image = "/images/social-card.png"
 
-  # Google Analytics: the old UA-27789976-3 property is dead (Universal
-  # Analytics stopped processing data in July 2023). Set a GA4 "G-..." id
-  # here to re-enable analytics.
-  # googleAnalytics = "G-XXXXXXXXXX"
+  # Google Analytics 4 (loaded only in production builds)
+  googleAnalytics = "G-ZRE3WPMMNK"
 
   # Global CTA Configuration (disabled for now, we'll use shortcodes)
   [params.cta]
