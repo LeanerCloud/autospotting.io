@@ -74,13 +74,18 @@ client_logos:
     logo: "/images/clients/apify.png"
   - name: "OhMy"
     logo: "/images/clients/ohmy.png"
+  - name: "Audiomack"
+    logo: "/images/clients/audiomack.png"
 ---
 
 {{< hero
     headline="Save 60-90% on AWS EC2 Costs"
     sub_headline="AutoSpotting automatically replaces on-demand instances in AutoScaling groups with Spot clones.<br><br>• Install in minutes<br>• Configure with tags<br>• No launch template changes required"
-    primary_button_text="Get Started"
-    primary_button_url="#pricing"
+    primary_button_text="Install from AWS Marketplace"
+    primary_button_url="https://aws.amazon.com/marketplace/pp/prodview-6uj4pruhgmun6"
+    secondary_button_text="See Pricing"
+    secondary_button_url="/#pricing"
+    hero_image="/images/savings-before-after.png"
     gradient-from="#1e40af"
     gradient-to="#7c3aed"
     gradient-angle="135"
@@ -96,7 +101,7 @@ client_logos:
 {{< feature
     title="Production-Ready Reliability"
     description="Automatic failover to on-demand instances ensures your applications stay running even when spot capacity is unavailable."
-    icon="✅"
+    image="/images/features/production.svg"
     features="Zero downtime during spot interruptions,Traffic draining for load balancers,Configurable on-demand instance retention,Trusted by major enterprises worldwide"
     imagePosition="right"
 >}}
@@ -104,7 +109,7 @@ client_logos:
 {{< feature
     title="Install in Minutes"
     description="Get started immediately with CloudFormation or Terraform. Tag your existing AutoScaling groups with 'spot-enabled=true' or use our GUI to estimate savings and enable with a single click - no launch template changes required."
-    icon="⚡"
+    image="/images/features/friction.svg"
     features="5-minute installation,Works with existing infrastructure,Deploy across multiple AWS accounts with StackSets,Start saving costs today"
     imagePosition="left"
 >}}
@@ -112,7 +117,7 @@ client_logos:
 {{< feature
     title="Your Data Stays Private"
     description="Runs entirely within your AWS account as Lambda functions. No SaaS backend, no external data transmission, minimal IAM permissions required."
-    icon="🔒"
+    image="/images/features/security.svg"
     features="Complete data privacy,Full auditability and control,Industry-standard security practices,No vendor access to your infrastructure"
     imagePosition="right"
 >}}
@@ -120,7 +125,7 @@ client_logos:
 {{< feature
     title="Works With Your Stack"
     description="Seamless integration with ECS, EKS, Elastic Beanstalk, and any service backed by AutoScaling groups. Fits naturally into your CI/CD pipelines."
-    icon="🔌"
+    image="/images/features/compatible.svg"
     features="Zero vendor lock-in,Easy to suspend or remove anytime,Complements existing AWS services,Multi-account support"
     imagePosition="left"
 >}}
@@ -128,7 +133,7 @@ client_logos:
 {{< feature
     title="Visual Dashboard & Analytics"
     description="Intuitive web interface to monitor your savings, manage AutoScaling groups, and analyze cost optimization across your AWS infrastructure in real-time."
-    icon="📊"
+    image="/images/savings-estimator.png"
     features="Real-time savings tracking,One-click spot enablement for ASGs,Historical cost analysis and reports,Visual savings estimates before enabling"
     imagePosition="right"
 >}}
@@ -136,7 +141,7 @@ client_logos:
 {{< feature
     title="Minimal Cost to Save Big"
     description="Pay only 10% of the savings generated through your AWS bill. Serverless architecture means negligible runtime costs."
-    icon="💰"
+    image="/images/features/cost.svg"
     features="No upfront investment,Pay only for results,Free tier for small installations,Cancel anytime with no penalties"
     imagePosition="left"
 >}}
@@ -144,12 +149,47 @@ client_logos:
 {{< feature
     title="Backed By Expert Support"
     description="Stable, tested binaries delivered through AWS Marketplace. Get setup assistance and long-term support from the team that built AutoSpotting."
-    icon="🎧"
+    image="/images/features/support.svg"
     features="Priority support for paying customers,Help with installation and optimization,Regular updates and improvements,Dedicated team with deep AWS expertise"
     imagePosition="right"
 >}}
 
 {{< /features-section >}}
+
+<section id="scenarios" class="bg-gray-50">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+    <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
+      <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">Typical Scenarios</h2>
+      <p class="mb-5 font-light text-gray-500 sm:text-xl">Where AutoSpotting delivers the most value</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8 max-w-screen-lg mx-auto">
+      <div class="bg-white border rounded-lg p-6 shadow-sm">
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Daily capacity scaling</h3>
+        <p class="text-gray-600">Workloads that scale up and down daily, which can't be effectively covered by Savings Plans or Reserved Instances.</p>
+      </div>
+      <div class="bg-white border rounded-lg p-6 shadow-sm">
+        <h3 class="text-xl font-bold text-gray-900 mb-2">No long-term commitments</h3>
+        <p class="text-gray-600">When the multi-year commitments of Reserved Instances and Savings Plans aren't desirable for your business.</p>
+      </div>
+      <div class="bg-white border rounded-lg p-6 shadow-sm">
+        <h3 class="text-xl font-bold text-gray-900 mb-2">No upfront payments</h3>
+        <p class="text-gray-600">Achieve the highest possible cost savings without capital-intensive 3-year all-upfront payments.</p>
+      </div>
+      <div class="bg-white border rounded-lg p-6 shadow-sm">
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Easy adoption at scale</h3>
+        <p class="text-gray-600">Convert to Spot (and back to on-demand) reliably without per-group configuration changes - ideal for large organizations and legacy environments.</p>
+      </div>
+    </div>
+    <div class="mx-auto max-w-screen-md text-center mt-12">
+      <h3 class="mb-2 text-2xl font-bold text-gray-900">Estimate your savings</h3>
+      <p class="mb-6 font-light text-gray-500 sm:text-lg">Even a relatively small AWS footprint often nets over $1,000/month. Generate your own estimate with our free tools, which can also produce your AutoSpotting configuration with a single click.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://bit.ly/LCSavingsCalculator" target="_blank" rel="noopener" class="inline-block px-6 py-3 text-white bg-primary-600 hover:bg-primary-700 font-medium rounded-lg transition-colors">Savings Calculator</a>
+        <a href="https://github.com/LeanerCloud/savings-estimator" target="_blank" rel="noopener" class="inline-block px-6 py-3 text-primary-700 bg-primary-50 hover:bg-primary-100 border border-primary-200 font-medium rounded-lg transition-colors">Savings Simulator App</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section id="demo" class="bg-white dark:bg-gray-900">
   <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
