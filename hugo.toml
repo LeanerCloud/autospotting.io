@@ -105,7 +105,7 @@ paginatePath = "page"
       # Get Started button
       [params.header.buttons.getStarted]
         text = "Get Started"
-        url = "#pricing"
+        url = "/#pricing"
 
   # Blog configuration
   [params.blog]
@@ -144,15 +144,15 @@ paginatePath = "page"
 [menu]
   [[menu.main]]
     name = "Benefits"
-    url = "#features"
+    url = "/#features"
     weight = 1
   [[menu.main]]
     name = "Testimonials"
-    url = "#testimonials"
+    url = "/#testimonials"
     weight = 2
   [[menu.main]]
     name = "Pricing"
-    url = "#pricing"
+    url = "/#pricing"
     weight = 3
   [[menu.main]]
     name = "Blog"
@@ -160,21 +160,21 @@ paginatePath = "page"
     weight = 5
   [[menu.main]]
     name = "FAQ"
-    url = "/faq.html"
+    url = "/#faq"
     weight = 6
 
   # Footer Column 1 Menu
   [[menu.footer_column_1]]
     name = "Benefits"
-    url = "#features"
+    url = "/#features"
     weight = 1
   [[menu.footer_column_1]]
     name = "Pricing"
-    url = "#pricing"
+    url = "/#pricing"
     weight = 2
   [[menu.footer_column_1]]
     name = "FAQ"
-    url = "/faq.html"
+    url = "/#faq"
     weight = 3
 
   # Footer Column 2 Menu
