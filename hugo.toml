@@ -67,7 +67,7 @@ enableGitInfo = true
   author = "AutoSpotting"
   logo = "/images/logo.png"
   # Default social sharing image (og:image / twitter:image fallback)
-  image = "/images/logo.png"
+  image = "/images/social-card.png"
 
   # Google Analytics: the old UA-27789976-3 property is dead (Universal
   # Analytics stopped processing data in July 2023). Set a GA4 "G-..." id
