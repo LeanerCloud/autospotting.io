@@ -207,7 +207,3 @@ enableGitInfo = true
     name = "License"
     url = "https://github.com/AutoSpotting/AutoSpotting/blob/master/LICENSE"
     weight = 1
-  [[menu.footer_column_3]]
-    name = "Privacy"
-    url = "/privacy.html"
-    weight = 2
