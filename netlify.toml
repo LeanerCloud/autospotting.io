@@ -1,30 +1,28 @@
 [build]
 publish = "public"
-command = "hugo --gc --minify"
+command = "npm run build"
+
+[build.environment]
+HUGO_VERSION = "0.152.2"
+HUGO_EXTENDED = "true"
+NODE_VERSION = "18"
+NPM_VERSION = "9"
 
 [context.production.environment]
-HUGO_VERSION = "0.69.0"
 HUGO_ENV = "production"
 HUGO_ENABLEGITINFO = "true"
 
 [context.split1]
-command = "hugo --gc --minify --enableGitInfo"
+command = "npm run build"
 
 [context.split1.environment]
-HUGO_VERSION = "0.69.0"
 HUGO_ENV = "production"
 
 [context.deploy-preview]
-command = "hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
-
-[context.deploy-preview.environment]
-HUGO_VERSION = "0.69.0"
+command = "npm run build"
 
 [context.branch-deploy]
-command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
-
-[context.branch-deploy.environment]
-HUGO_VERSION = "0.69.0"
+command = "npm run build"
 
 [context.next.environment]
 HUGO_ENABLEGITINFO = "true"

@@ -1,0 +1,193 @@
+<section class="border-y border-gray-100 overflow-hidden">
+    <div class="container mx-auto">
+        <div class="py-12">
+            <p class="text-center text-3xl md:text-2xl font-bold mb-6">{{ .Get "title" | default "Trusted by leading companies worldwide" }}</p>
+
+            <div class="logo-wrapper">
+                <button class="logo-arrow logo-arrow-left" aria-label="Scroll left">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <button class="logo-arrow logo-arrow-right" aria-label="Scroll right">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            <div class="logo-scroll">
+                <div class="logos-slide animate">
+                    {{ range .Page.Params.client_logos }}
+                    <img src="{{ .logo | relURL }}" class="h-20" alt="{{ .name }}" />
+                    {{ end }}
+                    {{ range .Page.Params.client_logos }}
+                    <img src="{{ .logo | relURL }}" class="h-20" alt="{{ .name }}" />
+                    {{ end }}
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.logo-wrapper {
+    position: relative;
+    padding: 0 80px;
+}
+
+.logo-scroll {
+    overflow: hidden;
+    padding: 20px 0;
+    white-space: nowrap;
+    position: relative;
+}
+
+.logos-slide {
+    display: inline-flex;
+    gap: 60px;
+}
+
+.logos-slide img {
+    height: 2.5rem;
+    display: inline-block;
+    vertical-align: middle;
+    opacity: 1;
+    transition: all 0.3s;
+}
+
+.logos-slide img:hover {
+    transform: scale(1.1);
+}
+
+.logo-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: white;
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    color: #1e40af;
+}
+
+.logo-arrow:hover {
+    background: #1e40af;
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.logo-arrow-left {
+    left: -60px;
+}
+
+.logo-arrow-right {
+    right: -60px;
+}
+
+@media (max-width: 768px) {
+    .logo-wrapper {
+        padding: 0;
+    }
+
+    .logos-slide {
+        gap: 40px;
+    }
+
+    .logos-slide img {
+        height: 2rem;
+    }
+
+    .logo-arrow {
+        display: none;
+    }
+}
+</style>
+
+<script>
+// Seamless infinite scroll for logos with arrow controls
+document.addEventListener('DOMContentLoaded', function() {
+    const slide = document.querySelector('.logos-slide');
+    const container = document.querySelector('.logo-scroll');
+    const wrapper = document.querySelector('.logo-wrapper');
+    const leftArrow = wrapper.querySelector('.logo-arrow-left');
+    const rightArrow = wrapper.querySelector('.logo-arrow-right');
+
+    if (!slide) return;
+
+    let isPaused = false;
+    let scrollPosition = 0;
+    let currentSpeed = 0.3; // base speed
+    const baseSpeed = 0.3;
+    const fastSpeed = 2.5; // speed when arrow is pressed
+
+    // Get the width of one complete set of logos
+    const logos = Array.from(slide.children);
+    const singleSetWidth = logos.slice(0, logos.length / 2).reduce((sum, logo) => {
+        return sum + logo.offsetWidth + 60; // 60px gap
+    }, 0);
+
+    function animate() {
+        if (!isPaused) {
+            scrollPosition += currentSpeed;
+
+            // Reset position seamlessly when we've scrolled past the first set
+            if (scrollPosition >= singleSetWidth) {
+                scrollPosition = scrollPosition - singleSetWidth;
+            }
+            // Handle reverse scrolling
+            if (scrollPosition < 0) {
+                scrollPosition = singleSetWidth + scrollPosition;
+            }
+
+            slide.style.transform = `translateX(-${scrollPosition}px)`;
+        }
+
+        requestAnimationFrame(animate);
+    }
+
+    // Pause on hover
+    container.addEventListener('mouseenter', () => {
+        isPaused = true;
+    });
+
+    container.addEventListener('mouseleave', () => {
+        isPaused = false;
+    });
+
+    // Arrow controls
+    leftArrow.addEventListener('mousedown', () => {
+        currentSpeed = -fastSpeed;
+    });
+
+    leftArrow.addEventListener('mouseup', () => {
+        currentSpeed = baseSpeed;
+    });
+
+    leftArrow.addEventListener('mouseleave', () => {
+        currentSpeed = baseSpeed;
+    });
+
+    rightArrow.addEventListener('mousedown', () => {
+        currentSpeed = fastSpeed;
+    });
+
+    rightArrow.addEventListener('mouseup', () => {
+        currentSpeed = baseSpeed;
+    });
+
+    rightArrow.addEventListener('mouseleave', () => {
+        currentSpeed = baseSpeed;
+    });
+
+    // Start animation
+    animate();
+});
+</script>

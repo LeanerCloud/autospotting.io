@@ -3,7 +3,8 @@ baseURL = "/"
 title = "AutoSpotting"
 theme = "meghna-hugo"
 # post pagination
-paginate = "6"
+[pagination]
+pagerSize = 6
 # post excerpt
 summaryLength = "15"
 # disqus short name

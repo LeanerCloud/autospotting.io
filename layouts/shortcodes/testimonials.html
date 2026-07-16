@@ -1,0 +1,222 @@
+{{ $background_color := .Get "background-color" }}
+<section class="section{{ if not $background_color }} bg-gray-50{{ end }}" {{ if $background_color }}style="background-color:{{ $background_color }};"{{ end }}>
+    <div class="container">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">{{ .Get "title" | default "Loved by Teams Worldwide" }}</h2>
+            <p class="text-xl text-gray-600">{{ .Get "description" | default "See what our customers have to say about their experience with our platform." }}</p>
+        </div>
+
+        <div class="testimonials-wrapper">
+            <button class="carousel-arrow carousel-arrow-left" aria-label="Scroll left">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <button class="carousel-arrow carousel-arrow-right" aria-label="Scroll right">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+        <div class="testimonials-container overflow-hidden">
+            <div class="testimonials-track animate">
+            {{ range .Page.Params.testimonials }}
+                <div class="testimonial-card">
+                    <div class="flex items-start space-x-6 mb-6">
+                        <img src="{{ .avatar | relURL }}" alt="{{ .name }}" class="w-12 h-12 rounded-full flex-shrink-0 object-cover">
+                        <div class="flex-grow">
+                            <h4 class="font-bold text-xl mb-1">{{ .name }}</h4>
+                            <p class="text-gray-600 mb-2">{{ .title }}</p>
+                            {{ if .company_logo }}
+                            <a href="{{ .company_url }}" target="_blank" rel="noopener" class="inline-block mt-2">
+                                <img src="{{ .company_logo | relURL }}" alt="{{ .company }}" class="h-8 opacity-70 hover:opacity-100 transition-opacity">
+                            </a>
+                            {{ end }}
+                        </div>
+                    </div>
+                    <p class="text-gray-700 text-lg leading-relaxed">{{ .quote }}</p>
+                </div>
+                {{ end }}
+                {{ range .Page.Params.testimonials }}
+                <div class="testimonial-card">
+                    <div class="flex items-start space-x-6 mb-6">
+                        <img src="{{ .avatar | relURL }}" alt="{{ .name }}" class="w-12 h-12 rounded-full flex-shrink-0 object-cover">
+                        <div class="flex-grow">
+                            <h4 class="font-bold text-xl mb-1">{{ .name }}</h4>
+                            <p class="text-gray-600 mb-2">{{ .title }}</p>
+                            {{ if .company_logo }}
+                            <a href="{{ .company_url }}" target="_blank" rel="noopener" class="inline-block mt-2">
+                                <img src="{{ .company_logo | relURL }}" alt="{{ .company }}" class="h-8 opacity-70 hover:opacity-100 transition-opacity">
+                            </a>
+                            {{ end }}
+                        </div>
+                    </div>
+                    <p class="text-gray-700 text-lg leading-relaxed">{{ .quote }}</p>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.testimonials-wrapper {
+    position: relative;
+    padding: 0 80px;
+}
+
+.testimonials-container {
+    padding: 20px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonials-track {
+    display: flex;
+    gap: 2rem;
+}
+
+.testimonial-card {
+    flex: 0 0 auto;
+    width: 500px;
+    max-width: 90vw;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: white;
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    color: #1e40af;
+}
+
+.carousel-arrow:hover {
+    background: #1e40af;
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-arrow-left {
+    left: -60px;
+}
+
+.carousel-arrow-right {
+    right: -60px;
+}
+
+@media (max-width: 768px) {
+    .testimonials-wrapper {
+        padding: 0;
+    }
+
+    .testimonial-card {
+        width: 350px;
+        padding: 1.5rem;
+    }
+
+    .carousel-arrow {
+        display: none;
+    }
+}
+</style>
+
+<script>
+// Seamless infinite scroll carousel with arrow controls
+document.addEventListener('DOMContentLoaded', function() {
+    const track = document.querySelector('.testimonials-track');
+    const container = document.querySelector('.testimonials-container');
+    const wrapper = document.querySelector('.testimonials-wrapper');
+    const leftArrow = wrapper.querySelector('.carousel-arrow-left');
+    const rightArrow = wrapper.querySelector('.carousel-arrow-right');
+
+    if (!track) return;
+
+    let isPaused = false;
+    let scrollPosition = 0;
+    let currentSpeed = 0.5; // base speed
+    const baseSpeed = 0.5;
+    const fastSpeed = 3; // speed when arrow is pressed
+
+    // Get the width of one complete set of testimonials
+    const cards = Array.from(track.children);
+    const singleSetWidth = cards.slice(0, cards.length / 2).reduce((sum, card) => {
+        return sum + card.offsetWidth + 32; // 32px = 2rem gap
+    }, 0);
+
+    function animate() {
+        if (!isPaused) {
+            scrollPosition += currentSpeed;
+
+            // Reset position seamlessly when we've scrolled past the first set
+            if (scrollPosition >= singleSetWidth) {
+                scrollPosition = scrollPosition - singleSetWidth;
+            }
+            // Handle reverse scrolling
+            if (scrollPosition < 0) {
+                scrollPosition = singleSetWidth + scrollPosition;
+            }
+
+            track.style.transform = `translateX(-${scrollPosition}px)`;
+        }
+
+        requestAnimationFrame(animate);
+    }
+
+    // Pause on hover
+    container.addEventListener('mouseenter', () => {
+        isPaused = true;
+    });
+
+    container.addEventListener('mouseleave', () => {
+        isPaused = false;
+    });
+
+    // Arrow controls
+    leftArrow.addEventListener('mousedown', () => {
+        currentSpeed = -fastSpeed;
+    });
+
+    leftArrow.addEventListener('mouseup', () => {
+        currentSpeed = baseSpeed;
+    });
+
+    leftArrow.addEventListener('mouseleave', () => {
+        currentSpeed = baseSpeed;
+    });
+
+    rightArrow.addEventListener('mousedown', () => {
+        currentSpeed = fastSpeed;
+    });
+
+    rightArrow.addEventListener('mouseup', () => {
+        currentSpeed = baseSpeed;
+    });
+
+    rightArrow.addEventListener('mouseleave', () => {
+        currentSpeed = baseSpeed;
+    });
+
+    // Start animation
+    animate();
+});
+</script>

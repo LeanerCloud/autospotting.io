@@ -23,9 +23,7 @@ pricing:
       price: Up to 5% of savings
       unit: month
       services:
-        - Pre-built from carefully tested code revisions
         - Installs in minutes
-        - Production-grade code
         - Covered by Enterprise support
         - Charged on your AWS bill
         - Pay as you go
@@ -33,17 +31,17 @@ pricing:
         label: "Install"
         link: "https://aws.amazon.com/marketplace/pp/prodview-6uj4pruhgmun6"
 
-    # pricing table loop
-    - name: Open Source Trunk
-      price: Free
-      unit: ""
-      services:
-        - Code available on GitHub under the OSL-3 license
-        - You build it, you run it
-        - The main branch may be unstable at times
-        - Support plans are available for purchase
-        - Custom development and DIY help are available
-        - Unlimited customization possibilities
-      button:
-        label: "BUILD FROM SOURCE CODE"
-        link: "https://github.com/AutoSpotting/AutoSpotting"
+    # # pricing table loop
+    # - name: Open Source Trunk
+    #   price: Free
+    #   unit: ""
+    #   services:
+    #     - Code available on GitHub under the OSL-3 license
+    #     - You build it, you run it
+    #     - The main branch may be unstable at times
+    #     - Support plans are available for purchase
+    #     - Custom development and DIY help are available
+    #     - Unlimited customization possibilities
+    #   button:
+    #     label: "BUILD FROM SOURCE CODE"
+    #     link: "https://github.com/AutoSpotting/AutoSpotting"

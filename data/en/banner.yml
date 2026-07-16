@@ -1,17 +1,27 @@
 ############################### Banner ################################
 banner:
   enable : true
-  bg_image_webp : "images/backgrounds/hero-area.webp"
-  bg_image : "images/backgrounds/hero-area.jpg"
+  # bg_image_webp : "images/backgrounds/hero-area.webp"
+  # bg_image : "images/backgrounds/hero-area.jpg"
   icon : "" # themify icon pack : https://themify.me/themify-icons
   title : "AutoSpotting"
   content : |
     Saves 60-90% of AWS EC2 costs by replacing
     on-demand instances in ASGs with Spot clones.
-    Deploys in minutes at any scale with minimal configuration changes.
-    Early ELB draining & fallback to on-demand on spot terminations.
-    Small cost overhead. Runs within each AWS account. No SaaS backend.
-    No vendor lock-in. Fully Auditable Open Source. Support and custom development available.
+
+
+    Install in minutes and configure using tags, without launch configuration changes.
+
+
+    ELB draining & fallback to on-demand on spot terminations.
+
+
+    Runs within each AWS account. No SaaS backend.
+
+
+    Support and custom development available.
+
+
     Trusted by thousands of users.
   button:
     enable : true

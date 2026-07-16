@@ -28,8 +28,8 @@ service:
       icon: "ti-lock"
       content: |
         - Fully hosted within your AWS account
+        - No SaaS backend
         - Minimalist set of IAM permissions
-        - Auditable, open source code
 
     - name: "Compatible"
       icon: "ti-plug"

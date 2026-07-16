@@ -1,0 +1,202 @@
+baseURL = "/"
+title = "AutoSpotting"
+defaultContentLanguage = "en"
+
+# Enable ugly URLs for compatibility
+uglyURLs = true
+
+# Enable emoji support
+enableEmoji = true
+
+# Enable Git info for lastmod
+enableGitInfo = true
+
+# Enable taxonomies
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
+
+# Pagination
+paginate = 6
+paginatePath = "page"
+
+# Hugo Modules Configuration
+[module]
+  [[module.imports]]
+    path = "github.com/chaoming/hugo-saasify-theme"
+  [module.hugoVersion]
+    extended = true
+    min = "0.80.0"
+
+[build]
+  writeStats = true
+
+[build.buildStats]
+  enable = true
+
+[security.funcs]
+  getenv = ['^HUGO_', '^CI$']
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+    lineNos = true
+    codeFences = true
+    guessSyntax = true
+    lineNumbersInTable = true
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2
+
+[params]
+  description = "AutoSpotting saves 60-90% of AWS EC2 costs by converting AutoScaling groups to Spot instances"
+  author = "AutoSpotting"
+  logo = "/images/logo.png"
+
+  # Google Analytics (keep existing)
+  googleAnalytics = "UA-27789976-3"
+
+  # Global CTA Configuration (disabled for now, we'll use shortcodes)
+  [params.cta]
+    enable = false
+
+  # Social Media Links
+  [params.social]
+    github = "https://github.com/AutoSpotting/AutoSpotting"
+
+  # Footer Configuration
+  [params.footer]
+    column_1_title = "Product"
+    column_2_title = "Resources"
+    column_3_title = "Legal"
+
+  [params.header]
+    # Header background and border styles
+    background = "bg-white/80 backdrop-blur-sm"
+    border = "border-b border-gray-100"
+
+    # Menu configuration
+    [params.header.menu]
+      spacing = "space-x-8"
+
+      # Dropdown menu configuration
+      [params.header.menu.dropdown]
+        width = "w-72"
+        container_padding = "py-6"
+        item_padding = "px-8 py-3"
+        background = "bg-white"
+        border = "border border-gray-100"
+        shadow = "shadow-xl"
+        radius = "rounded-lg"
+        text_color = "text-gray-700"
+        hover_background = "hover:bg-gray-50"
+        text_size = "text-sm"
+
+    # Button configuration
+    [params.header.buttons]
+      # Sign In button (disabled for now)
+      [params.header.buttons.signIn]
+        text = ""
+        url = ""
+
+      # Get Started button
+      [params.header.buttons.getStarted]
+        text = "Get Started"
+        url = "#pricing"
+
+  # Blog configuration
+  [params.blog]
+    enable = true
+    title = "Latest Articles"
+    subtitle = "AWS cost optimization insights and AutoSpotting updates"
+
+    # Blog CTA configuration
+    [params.blog.cta]
+      enable = true
+
+    # Sidebar configuration
+    [params.blog.sidebar]
+      # Recent articles section
+      [params.blog.sidebar.recent]
+        enable = true
+        title = "Recent Articles"
+        count = 5
+
+      # Categories section
+      [params.blog.sidebar.categories]
+        enable = true
+        title = "Categories"
+
+      # Tags section
+      [params.blog.sidebar.tags]
+        enable = true
+        title = "Popular Tags"
+        count = 20
+
+      # Subscribe form section (disabled for now)
+      [params.blog.sidebar.subscribe]
+        enable = false
+
+# Navigation Menu - Single page with anchors
+[menu]
+  [[menu.main]]
+    name = "Benefits"
+    url = "#features"
+    weight = 1
+  [[menu.main]]
+    name = "Testimonials"
+    url = "#testimonials"
+    weight = 2
+  [[menu.main]]
+    name = "Pricing"
+    url = "#pricing"
+    weight = 3
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 5
+  [[menu.main]]
+    name = "FAQ"
+    url = "/faq.html"
+    weight = 6
+
+  # Footer Column 1 Menu
+  [[menu.footer_column_1]]
+    name = "Benefits"
+    url = "#features"
+    weight = 1
+  [[menu.footer_column_1]]
+    name = "Pricing"
+    url = "#pricing"
+    weight = 2
+  [[menu.footer_column_1]]
+    name = "FAQ"
+    url = "/faq.html"
+    weight = 3
+
+  # Footer Column 2 Menu
+  [[menu.footer_column_2]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 1
+  [[menu.footer_column_2]]
+    name = "GitHub"
+    url = "https://github.com/AutoSpotting/AutoSpotting"
+    weight = 2
+  [[menu.footer_column_2]]
+    name = "Documentation"
+    url = "https://github.com/AutoSpotting/AutoSpotting/blob/master/README.md"
+    weight = 3
+
+  # Footer Column 3 Menu
+  [[menu.footer_column_3]]
+    name = "License"
+    url = "https://github.com/AutoSpotting/AutoSpotting/blob/master/LICENSE"
+    weight = 1
+  [[menu.footer_column_3]]
+    name = "Privacy"
+    url = "/privacy.html"
+    weight = 2
