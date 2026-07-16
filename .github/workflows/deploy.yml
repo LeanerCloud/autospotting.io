@@ -1,0 +1,57 @@
+name: Deploy website
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  id-token: write # OIDC federation to AWS
+  contents: read
+
+concurrency: deploy
+
+env:
+  S3_BUCKET: autospotting-io-website
+  CLOUDFRONT_DISTRIBUTION_ID: E9ZOAYID5DQ70
+  AWS_ROLE: arn:aws:iam::909626172446:role/autospotting-website-github-actions
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # full history so Hugo's enableGitInfo produces correct lastmod dates
+          fetch-depth: 0
+
+      - uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "0.164.0"
+          extended: true
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site (Tailwind + Hugo)
+        run: npm run build
+        env:
+          HUGO_ENV: production
+          HUGO_ENABLEGITINFO: "true"
+
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ env.AWS_ROLE }}
+          aws-region: us-east-1
+
+      - name: Sync to S3
+        run: aws s3 sync public/ "s3://${S3_BUCKET}" --delete
+
+      - name: Invalidate CloudFront cache
+        run: aws cloudfront create-invalidation --distribution-id "${CLOUDFRONT_DISTRIBUTION_ID}" --paths "/*"
