@@ -184,7 +184,7 @@ client_logos:
       <h3 class="mb-2 text-2xl font-bold text-gray-900">Estimate your savings</h3>
       <p class="mb-6 font-light text-gray-500 sm:text-lg">Even a relatively small AWS footprint often nets over $1,000/month. Generate your own estimate with our free tools, which can also produce your AutoSpotting configuration with a single click.</p>
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="https://bit.ly/LCSavingsCalculator" target="_blank" rel="noopener" class="inline-block px-6 py-3 text-white bg-primary-600 hover:bg-primary-700 font-medium rounded-lg transition-colors">Savings Calculator</a>
+        <a href="https://bit.ly/LCSavingsCalculator" target="_blank" rel="noopener" class="inline-block px-6 py-3 text-white bg-primary-700 hover:bg-primary-800 font-medium rounded-lg transition-colors">Savings Calculator</a>
         <a href="https://github.com/LeanerCloud/savings-estimator" target="_blank" rel="noopener" class="inline-block px-6 py-3 text-primary-700 bg-primary-50 hover:bg-primary-100 border border-primary-200 font-medium rounded-lg transition-colors">Savings Simulator App</a>
       </div>
     </div>

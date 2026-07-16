@@ -17,10 +17,11 @@
             <div class="logo-scroll">
                 <div class="logos-slide animate">
                     {{ range .Page.Params.client_logos }}
-                    <img src="{{ .logo | relURL }}" class="h-20" alt="{{ .name }}" />
+                    <img src="{{ .logo | relURL }}" class="h-20" alt="{{ .name }}" loading="lazy" />
                     {{ end }}
+                    {{/* duplicated for the seamless marquee loop; hidden from screen readers */}}
                     {{ range .Page.Params.client_logos }}
-                    <img src="{{ .logo | relURL }}" class="h-20" alt="{{ .name }}" />
+                    <img src="{{ .logo | relURL }}" class="h-20" alt="" aria-hidden="true" loading="lazy" />
                     {{ end }}
                 </div>
             </div>

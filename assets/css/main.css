@@ -40,7 +40,8 @@
   }
 
   .btn-primary {
-    @apply btn bg-primary-600 text-white hover:bg-primary-700 hover:scale-105;
+    /* primary-700: white text on primary-600 is only ~3.7:1 contrast (AA needs 4.5) */
+    @apply btn bg-primary-700 text-white hover:bg-primary-800 hover:scale-105;
   }
 
   .btn-secondary {

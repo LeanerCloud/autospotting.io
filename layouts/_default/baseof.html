@@ -93,15 +93,16 @@
     {{ end }}
 </head>
 <body class="min-h-screen flex flex-col">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-2 focus:left-2 focus:px-4 focus:py-2 focus:bg-white focus:text-primary-700 focus:rounded-lg focus:shadow-lg">Skip to content</a>
     <!-- Header -->
     <div class="fixed top-0 left-0 right-0 z-50">
         {{ partial "header" . }}
     </div>
 
     <!-- Main Content -->
-    <div class="pt-20">
+    <main id="main-content" class="pt-20">
         {{ block "main" . }}{{ end }}
-    </div>
+    </main>
 
     <!-- Footer -->
     {{ partial "footer" . }}
