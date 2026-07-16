@@ -208,6 +208,18 @@ enableGitInfo = true
 
   # Footer Column 3 Menu
   [[menu.footer_column_3]]
+    name = "Contact Us"
+    url = "mailto:support@autospotting.io"
+    weight = 1
+  [[menu.footer_column_3]]
+    name = "Book a Call"
+    url = "https://calendly.com/cristi-leanercloud/30min"
+    weight = 2
+  [[menu.footer_column_3]]
+    name = "LeanerCloud"
+    url = "https://leanercloud.com"
+    weight = 3
+  [[menu.footer_column_3]]
     name = "License"
     url = "https://github.com/AutoSpotting/AutoSpotting/blob/master/LICENSE"
-    weight = 1
+    weight = 4
