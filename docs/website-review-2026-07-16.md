@@ -105,3 +105,22 @@ local dev server, plus a copy/asset comparison with the archived autospotting.io
 - Tag/category links, FAQ anchor, contact CTA, testimonials and video embeds verified on
   the running dev server
 - Browser QA (Chrome) confirmed homepage/blog/posts render cleanly with zero console errors
+
+---
+
+## Addendum: marketing comparison vs the archived autospotting.io (2026-07-16)
+
+Issues found comparing with the old Versoly page snapshot, all addressed in
+commits `f3002b9` + `f18fb75` (deployed):
+
+1. No visual savings proof → before/after EC2 cost chart now in the hero;
+   estimator summary ($1,094/month net) illustrates the Dashboard feature
+2. Soft hero CTA → primary "Install from AWS Marketplace" + secondary pricing
+3. Missing "Typical Scenarios" self-qualification section → restored (4 cards)
+4. Missing savings tools → "Estimate your savings" block (calculator + GUI)
+5. Emoji placeholder feature art → purpose-built SVGs from static/images/features/
+6. Audiomack missing from client logos → added
+7. No contact path in footer → Contact Us / Book a Call / LeanerCloud links
+
+Deliberately not carried over: demo videos + extra testimonials (already
+restored earlier), expired Slack invite (pending a fresh link).
