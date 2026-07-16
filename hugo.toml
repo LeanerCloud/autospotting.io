@@ -1,9 +1,15 @@
-baseURL = "/"
+baseURL = "https://autospotting.io/"
 title = "AutoSpotting"
 defaultContentLanguage = "en"
 
+# Generate robots.txt (template in layouts/robots.txt)
+enableRobotsTXT = true
+
 # Enable ugly URLs for compatibility
 uglyURLs = true
+
+# Keep the duplicated backup copy of the leanercloud posts out of the build
+ignoreFiles = ['content/blog/leanercloud-backup']
 
 # Enable emoji support
 enableEmoji = true
@@ -17,8 +23,9 @@ enableGitInfo = true
   tag = 'tags'
 
 # Pagination
-paginate = 6
-paginatePath = "page"
+[pagination]
+  pagerSize = 6
+  path = "page"
 
 # Hugo Modules Configuration
 [module]
