@@ -12,3 +12,8 @@ hugo_stats.json
 .layouts
 .static
 .vscode
+themes/
+config.toml
+robots.txt
+data/
+i18n/
