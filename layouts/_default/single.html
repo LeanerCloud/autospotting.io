@@ -23,10 +23,12 @@
 
             {{ with .Params.featured_image }}
                 <div class="mb-8">
-                    <img src="{{ . }}" 
-                         alt="{{ $.Title }}" 
+                    {{/* above-the-fold LCP image: load eagerly with high priority */}}
+                    <img src="{{ . }}"
+                         alt="{{ $.Title }}"
                          class="w-full h-auto rounded-lg"
-                         loading="lazy">
+                         loading="eager"
+                         fetchpriority="high">
                 </div>
             {{ end }}
 

@@ -1,0 +1,2 @@
+{{- /* Lazy-load in-content images; they are all below the fold */ -}}
+<img src="{{ .Destination | safeURL }}" alt="{{ .Text }}"{{ with .Title }} title="{{ . }}"{{ end }} loading="lazy" decoding="async">
