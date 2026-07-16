@@ -54,7 +54,7 @@ if you have any questions or suggestions on how we could work together.
 
 ## AutoSpotting
 
-In my previous [blog](//monthly-update-october-2021/) I mentioned that I've
+In my previous [blog](/blog/cloudutil/2021-10-monthly-update.html) I mentioned that I've
 been working on a large refactoring that changes the way we launch Spot
 instances, which offers the ability to get better uptimes. This landed in the
 Github open source repo sometime in October and I've been working on

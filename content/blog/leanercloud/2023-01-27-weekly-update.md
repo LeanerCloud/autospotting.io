@@ -37,7 +37,7 @@ For the rest of the week I spent some time improving my web presence, to simplif
 
 Based on feedback from people I talked a few weeks back, the website was too heavy in information, and then I somehow also broke [autospotting.io](http://autospotting.io/?utm_source=leanercloud.beehiiv.com&utm_medium=referral&utm_campaign=weekly-update-27-jan-2023) through some manual changes and it was down for a couple of days, and I only realized after someone complained about it on Reddit.
 
-So I finally spent on time to fix it and carved out the information on AutoSpotting from [LeanerCloud.com](https://hemingwayapp.com/LeanerCloud.com?utm_source=leanercloud.beehiiv.com&utm_medium=referral&utm_campaign=weekly-update-27-jan-2023) and used it to update [AutoSpotting.io](https://hemingwayapp.com/AutoSpotting.io?utm_source=leanercloud.beehiiv.com&utm_medium=referral&utm_campaign=weekly-update-27-jan-2023).
+So I finally spent on time to fix it and carved out the information on AutoSpotting from [LeanerCloud.com](https://leanercloud.com) and used it to update [AutoSpotting.io](https://autospotting.io).
 
 I then also moved the EBS Optimizer information into a sub-page, so [leanercloud.com](http://leanercloud.com/?utm_source=leanercloud.beehiiv.com&utm_medium=referral&utm_campaign=weekly-update-27-jan-2023) has much less technical details about my tools.
 

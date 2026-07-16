@@ -66,11 +66,11 @@ Here's how it looks like in action:
 
 There's also a small non-functional fix related to the deletion of SQS messages after being processed, which used to be shown in the logs like this:
 
-SCE:2023-04-18T12:10:00 2023/04/18 12:11:09 region.go:522: us-east-1 **Error** deleting on-demand instance i-09e980848cc071f5a launch event message from the SQS Queue [https://sqs.us-east-1.amazonaws.com/xxxxx/AutoSpotting.fifo](https://sqs.us-east-1.amazonaws.com/909626172446/AutoSpotting.fifo?utm_source=leanercloud.beehiiv.com&utm_medium=referral&utm_campaign=another-new-autospotting-release-in-less-than-a-week): MissingParameter: The request must contain the parameter ReceiptHandle.
+SCE:2023-04-18T12:10:00 2023/04/18 12:11:09 region.go:522: us-east-1 **Error** deleting on-demand instance i-09e980848cc071f5a launch event message from the SQS Queue https://sqs.us-east-1.amazonaws.com/xxxxx/AutoSpotting.fifo: MissingParameter: The request must contain the parameter ReceiptHandle.
 
 The current version instead shows this message:
 
-SQS:i-0e2ffa0829eb9167c 2023/04/18 10:28:05 region.go:527: us-east-1 Successfully deleted spot instance i-0e2ffa0829eb9167c launch event message from the SQS Queue [https://sqs.us-east-1.amazonaws.com/xxxxx/AutoSpotting.fifo](https://sqs.us-east-1.amazonaws.com/909626172446/AutoSpotting.fifo?utm_source=leanercloud.beehiiv.com&utm_medium=referral&utm_campaign=another-new-autospotting-release-in-less-than-a-week)
+SQS:i-0e2ffa0829eb9167c 2023/04/18 10:28:05 region.go:527: us-east-1 Successfully deleted spot instance i-0e2ffa0829eb9167c launch event message from the SQS Queue https://sqs.us-east-1.amazonaws.com/xxxxx/AutoSpotting.fifo
 
 #### Keep reading
 

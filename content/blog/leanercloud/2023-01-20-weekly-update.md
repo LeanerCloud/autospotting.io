@@ -15,7 +15,7 @@ Welcome to this week's progress update. Let's dive right in!
 
 ## Savings calculator integration on leanercloud.com
 
-I started the week by integrating the savings calculator spreadsheet I built last week into my [leanercloud.com](https://hemingwayapp.com/leanercloud.com?utm_source=leanercloud.beehiiv.com&utm_medium=referral&utm_campaign=weekly-update-20-jan-2023) website. I also polished it a bit more and added a screenshot with some figures, to make it clear for people what to expect.
+I started the week by integrating the savings calculator spreadsheet I built last week into my [leanercloud.com](https://leanercloud.com) website. I also polished it a bit more and added a screenshot with some figures, to make it clear for people what to expect.
 
 ## AutoSpotting Intro recording
 
@@ -29,7 +29,7 @@ But then as I started to record myself more and more for my podcast, this got ve
 
 When I reflected on this it made me happy to see how much I've grown as a person over the last few months, and how much I'm learning all the time.
 
-So I recorded myself presenting, I uploaded the recording on Youtube, then embedded it on [leanercloud.com](https://hemingwayapp.com/leanercloud.com?utm_source=leanercloud.beehiiv.com&utm_medium=referral&utm_campaign=weekly-update-20-jan-2023). I'd love to see your feedback about it.
+So I recorded myself presenting, I uploaded the recording on Youtube, then embedded it on [leanercloud.com](https://leanercloud.com). I'd love to see your feedback about it.
 
 ## New podcast episode - Spot masterclass
 

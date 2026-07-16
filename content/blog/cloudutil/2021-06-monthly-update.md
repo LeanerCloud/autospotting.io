@@ -18,10 +18,7 @@ Another month, another AutoSpotting community update.
 
 I essentially just carved this functionality from AutoSpotting and made it into a generic tool that can be used by anyone using EC2 to reap these benefits. You can see more about it, including a live demo, in the latest recording of the AutoSpotting community call.
 
-<video controls muted style="width: 100%; max-width: 800px;">
-  <source src="https://autospotting.io/videos/AutoSpotting%20-%2024%20June%202021.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+*(The recording of this call is unfortunately no longer available online.)*
 
 A lot of it has been based from AutoSpotting ideas and code, so if you like AutoSpotting you'll probably also like EBS-Optimizer. It's still pretty basic but I have a few ideas on how to improve it, stay tuned for more.
 

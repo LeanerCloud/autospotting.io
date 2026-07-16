@@ -15,10 +15,7 @@ As promised in my last monthly email, I'm now sharing monthly the progress achie
 
 I've also resumed the monthly AskMeAnything-style community calls, and below you can see the recording of our previous one.
 
-<video controls muted style="width: 100%; max-width: 800px;">
-  <source src="https://autospotting.io/videos/AutoSpotting%20Community%20call%2020-May-2021.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+*(The recording of this call is unfortunately no longer available online.)*
 
 ## Progress report May 2021
 

@@ -63,7 +63,7 @@ As I mentioned before, some of these advanced features may only be made availabl
 - This version wouldn't be available if it wasn't for my supporters on Patreon and Github Sponsors, who kept me motivated to keep working on it over the last year. Huge thanks to you all!
 - Thank you for reading so far, this ended up much longer that I expected ;-)
 
-As always, feel free to reach out to me by answering this email or on [Gitter](https://gitter.im/cristim) if you have any feedback, questions or concerns.
+As always, feel free to reach out to me by answering this email or on Gitter if you have any feedback, questions or concerns.
 
 Best regards,
 
