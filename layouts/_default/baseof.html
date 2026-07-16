@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    {{- $pageTitle := cond .IsHome (.Title | default .Site.Title) (printf "%s | %s" .Title .Site.Title) -}}
+    {{- /* seo_title front matter overrides the display title in <title>/social tags only */ -}}
+    {{- $seoTitle := .Params.seo_title | default .Title -}}
+    {{- $pageTitle := cond .IsHome ($seoTitle | default .Site.Title) (printf "%s | %s" $seoTitle .Site.Title) -}}
     {{- $description := .Description | default .Site.Params.description -}}
     {{- $socialImage := .Params.image | default (.Params.featured_image | default .Site.Params.image) -}}
     {{- /* uglyURLs gives section/home permalinks an index.html suffix; canonicalize without it */ -}}

@@ -1,5 +1,6 @@
 ---
 title: "How we maximized task density on our ECS cluster by avoiding burstable instances"
+seo_title: "Maximizing ECS Task Density Without Burstables"
 date: 2023-06-28T00:00:00+00:00
 description: "Overcoming ECS task density limitations caused by ENI exhaustion on burstable instances"
 author: "Cristian Magherusan-Stanciu"

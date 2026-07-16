@@ -1,5 +1,6 @@
 ---
 title: "Adopting the ONCE Model for All My CLI FinOps Tools and Terraform Building Blocks"
+seo_title: "Adopting the ONCE Model for My FinOps Tools"
 date: 2024-05-27T00:00:00+00:00
 description: "Releasing CLI tools and Terraform modules under the 37signals ONCE Model"
 author: "Cristian Magherusan-Stanciu"

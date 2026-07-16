@@ -1,5 +1,6 @@
 ---
 title: "Why I recommended ECS instead of Kubernetes to my latest customer"
+seo_title: "Why I Recommended ECS Instead of Kubernetes"
 date: 2023-06-08T00:00:00+00:00
 description: "Choosing ECS for cost optimization and simplicity at an AI startup"
 author: "Cristian Magherusan-Stanciu"
@@ -36,7 +37,7 @@ The RDS was using a relatively large instance with very little usage, and also t
 
 The application running on EC2 is packaged in Docker containers, and each EC2 instance is checking out code from GitHub and running Docker-compose to build and spin up a number of containers locally.
 
-![](/images/blog/leanercloud-content/recommended-ecs-instead-kubernetes-latest-customer/image-2.png)
+![Architecture diagram: EC2 instances running docker-compose builds from GitHub](/images/blog/leanercloud-content/recommended-ecs-instead-kubernetes-latest-customer/image-2.png)
 
 Initial State
 
@@ -80,7 +81,7 @@ The idea was to initially provision EC2 instances with the largest available mem
 
 In the ECS world we can also adopt Spot instances with AutoSpotting for a good part of their workloads, and once everything is figured out, purchasing Savings Plans or RIs for remaining capacity and the database hosts.
 
-![](/images/blog/leanercloud-content/recommended-ecs-instead-kubernetes-latest-customer/image-3.png)
+![Proposed ECS architecture with Spot instances and Savings Plans](/images/blog/leanercloud-content/recommended-ecs-instead-kubernetes-latest-customer/image-3.png)
 
 Proposed state
 

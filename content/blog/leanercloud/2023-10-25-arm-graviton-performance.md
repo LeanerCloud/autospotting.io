@@ -1,5 +1,6 @@
 ---
 title: "How can Arm chips like AWS Graviton or Apple M1/2 be faster and cheaper than x86 chips from Intel or AMD"
+seo_title: "Why Arm Chips Like AWS Graviton Are Faster and Cheaper"
 date: 2023-10-25T00:00:00+00:00
 description: "Understanding why Arm-based processors deliver better performance and lower costs than x86 alternatives"
 author: "Cristian Magherusan-Stanciu"

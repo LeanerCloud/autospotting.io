@@ -1,5 +1,6 @@
 ---
 title: "Vantage Just Updated ec2instances.info and Released All Their Code, Now What?"
+seo_title: "Vantage Released the ec2instances.info Code - Now What?"
 date: 2025-05-26T00:00:00+00:00
 description: "Analyzing Vantage's refreshed ec2instances.info and planning the future of cloud-instances.info fork"
 author: "Cristian Magherusan-Stanciu"
@@ -43,11 +44,11 @@ They have an entirely new frontend code, with a more modern look and feel.
 
 Lere's how it looks like now:
 
-![](/images/blog/leanercloud-content/vantage-just-updated-ec2instances-info-and-released-all-their-code-now-what/image-2.png)
+![The ec2instances.info homepage after Vantage's update](/images/blog/leanercloud-content/vantage-just-updated-ec2instances-info-and-released-all-their-code-now-what/image-2.png)
 
 When it comes to the way it looks, the main visually noticeable changes are in the header. They removed that obnoxious marketing banner from the top of the page which was very annoying for people using this tool for work on a daily basis. Instead of that they just left a discreet "presented by Vantage” note which is completely fine to me.
 
-![](/images/blog/leanercloud-content/vantage-just-updated-ec2instances-info-and-released-all-their-code-now-what/image-3.png)
+![The discreet 'presented by Vantage' note on ec2instances.info](/images/blog/leanercloud-content/vantage-just-updated-ec2instances-info-and-released-all-their-code-now-what/image-3.png)
 
 As you can see they also moved the Azure entry point at the top of the page, which makes it easier to discover compared to the previous version, where we used to have a toggle to Azure at the bottom of the page.
 
@@ -57,19 +58,19 @@ On the flip side, there are a few small changes in the way the filters work, whi
 
 Another regression I noticed was the sorting by price shows unavailable instance types first:
 
-![](/images/blog/leanercloud-content/vantage-just-updated-ec2instances-info-and-released-all-their-code-now-what/image-4.png)
+![Sorting by price shows unavailable instance types first](/images/blog/leanercloud-content/vantage-just-updated-ec2instances-info-and-released-all-their-code-now-what/image-4.png)
 
 This isn't such a big issue in Virginia, where most instances are available, but in other regions you have to scroll through a lot of unavailable instance types before you get to some of the available ones, as you can see below in London:
 
-![](/images/blog/leanercloud-content/vantage-just-updated-ec2instances-info-and-released-all-their-code-now-what/image-5.png)
+![Many unavailable instance types listed before available ones in the London region](/images/blog/leanercloud-content/vantage-just-updated-ec2instances-info-and-released-all-their-code-now-what/image-5.png)
 
 And the last thing I noticed was the removal of the region search field from the top of the region drop-down list, which makes it harder to find the region you want to look at:
 
-![](/images/blog/leanercloud-content/vantage-just-updated-ec2instances-info-and-released-all-their-code-now-what/image-6.png)
+![Region drop-down list missing the region search field](/images/blog/leanercloud-content/vantage-just-updated-ec2instances-info-and-released-all-their-code-now-what/image-6.png)
 
 Compared to what we have in the old version:
 
-![](/images/blog/leanercloud-content/vantage-just-updated-ec2instances-info-and-released-all-their-code-now-what/image-7.png)
+![The old ec2instances.info region drop-down with search field](/images/blog/leanercloud-content/vantage-just-updated-ec2instances-info-and-released-all-their-code-now-what/image-7.png)
 
 Looking under the hood, the data which used to be pre-rendered as HTML at build time is now fetched and only rendered from Javascript for the current view, which makes it load much faster compared to the previous implementation.
 

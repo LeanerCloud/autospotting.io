@@ -1,5 +1,6 @@
 ---
 title: "Forking ec2instances.info as a vendor-neutral alternative at cloud-instances.info"
+seo_title: "Forking ec2instances.info as cloud-instances.info"
 date: 2025-05-08T00:00:00+00:00
 description: "Creating a community-driven fork of ec2instances.info after Vantage development stalled"
 author: "Cristian Magherusan-Stanciu"

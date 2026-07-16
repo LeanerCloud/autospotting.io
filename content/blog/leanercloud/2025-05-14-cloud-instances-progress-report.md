@@ -1,5 +1,6 @@
 ---
 title: "Progress Report for the First Week After Forking ec2instances.info"
+seo_title: "cloud-instances.info: First Week Progress Report"
 date: 2025-05-14T00:00:00+00:00
 description: "First week of development on cloud-instances.info fork: domains, hosting, and community response"
 author: "Cristian Magherusan-Stanciu"
