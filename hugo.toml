@@ -45,7 +45,7 @@ enableGitInfo = true
   getenv = ['^HUGO_', '^CI$']
 
 # Use youtube-nocookie.com for embeds (no cookies until playback)
-[services.youtube]
+[privacy.youtube]
   privacyEnhanced = true
 
 [markup]
