@@ -1,0 +1,45 @@
+{{ $data := .Inner | transform.Unmarshal }}
+<section id="{{ $data.id | default "faq" }}" class="bg-white dark:bg-gray-900">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+        <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{{ $data.title | default "Frequently Asked Questions" }}</h2>
+            {{ with $data.description }}
+            <p class="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">{{ . }}</p>
+            {{ end }}
+        </div>
+
+        <div class="space-y-6">
+            {{ range $data.questions }}
+            <div class="border rounded-lg overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow duration-200">
+                <button class="w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition-colors duration-200 focus:outline-none"
+                        onclick="this.parentElement.querySelector('.faq-content').classList.toggle('hidden');
+                                 this.querySelector('svg').classList.toggle('rotate-180')">
+                    <span class="text-lg font-medium text-gray-900">{{ .question }}</span>
+                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="faq-content hidden border-t">
+                    <div class="p-6 prose prose-sm sm:prose lg:prose-lg max-w-none">
+                        {{ .answer | markdownify }}
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+
+        {{ with $data.contact }}
+        <div class="mx-auto max-w-screen-md text-center mt-12">
+            <h3 class="mb-2 text-2xl font-bold text-gray-900 dark:text-white">{{ .title | default "Still have questions?" }}</h3>
+            {{ with .description }}
+            <p class="mb-6 font-light text-gray-500 sm:text-lg dark:text-gray-400">{{ . }}</p>
+            {{ end }}
+            <div class="flex flex-wrap justify-center gap-4">
+                {{ range $i, $btn := .buttons }}
+                <a href="{{ $btn.url }}" class="inline-block px-6 py-3 font-medium rounded-lg transition-colors {{ if eq $i 0 }}text-white bg-primary-600 hover:bg-primary-700{{ else }}text-primary-700 bg-primary-50 hover:bg-primary-100 border border-primary-200{{ end }}">{{ $btn.text }}</a>
+                {{ end }}
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</section>

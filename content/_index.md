@@ -257,14 +257,23 @@ client_logos:
       "question": "What if I want to stop using AutoSpotting?",
       "answer": "No vendor lock-in! Simply uninstall AutoSpotting and your AutoScaling groups will eventually revert to fully on-demand instances. For AWS Marketplace subscriptions, you can cancel anytime."
     }
-  ]
+  ],
+  "contact": {
+    "title": "Still have questions?",
+    "description": "If you need help or have any further questions about AutoSpotting, reach out and we'll do our best to help you.",
+    "buttons": [
+      {
+        "text": "Email Us",
+        "url": "mailto:support@autospotting.io?subject=AutoSpotting%20Question"
+      },
+      {
+        "text": "Book a Call",
+        "url": "https://calendly.com/cristi-leanercloud/30min"
+      }
+    ]
+  }
 }
 {{< /faq >}}
-
-<div class="text-center mt-8">
-  <p class="text-lg mb-4">Still have questions?</p>
-  <a href="mailto:support@autospotting.io" class="inline-block px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">Reach Out to Our Team</a>
-</div>
 
 <div id="contact"></div>
 
