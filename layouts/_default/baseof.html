@@ -118,5 +118,16 @@
     <script src="{{ "js/language-preference.js" | relURL }}"></script>
     {{ end }}
 
+
+    <!-- Re-run the fragment scroll after load: image reflows abort the
+         browser's initial smooth scroll to the anchor -->
+    <script>
+        window.addEventListener('load', function () {
+            if (location.hash) {
+                var el = document.getElementById(location.hash.slice(1));
+                if (el) requestAnimationFrame(function () { el.scrollIntoView(); });
+            }
+        });
+    </script>
 </body>
 </html>
