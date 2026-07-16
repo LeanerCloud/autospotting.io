@@ -151,6 +151,25 @@ client_logos:
 
 {{< /features-section >}}
 
+<section id="demo" class="bg-white dark:bg-gray-900">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+    <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
+      <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">See AutoSpotting in Action</h2>
+      <p class="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">A quick introduction, and a real installation that reached 85% savings within minutes</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8 max-w-screen-lg mx-auto">
+      <div>
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3 text-center">How AutoSpotting works</h3>
+        {{< youtube foobAmWpexI >}}
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3 text-center">Installed in minutes, 85% savings</h3>
+        {{< youtube yGyh6cZESPA >}}
+      </div>
+    </div>
+  </div>
+</section>
+
 <div id="testimonials"></div>
 
 {{< testimonials
