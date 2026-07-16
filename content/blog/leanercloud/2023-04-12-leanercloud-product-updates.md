@@ -5,7 +5,7 @@ description: "AutoSpotting 1.2.0-2 delivers the most substantial release in 7 ye
 author: "Cristian Magherusan-Stanciu"
 categories: ["AutoSpotting", "Releases"]
 tags: ["autospotting", "aws", "spot-instances", "updates", "leanercloud"]
-featured_image: "/images/blog/leanercloud/weekly-updates.png"
+featured_image: "/images/blog/leanercloud/weekly-updates.jpg"
 draft: false
 ---
 

@@ -5,11 +5,11 @@ description: "Savings calculator integration, AutoSpotting intro video, Spot mas
 author: "Cristian Magherusan-Stanciu"
 categories: ["Updates"]
 tags: ["weekly-update", "savings-calculator", "podcast", "twitter", "leanercloud"]
-featured_image: "/images/blog/leanercloud/weekly-updates.png"
+featured_image: "/images/blog/leanercloud/weekly-updates.jpg"
 draft: false
 ---
 
-![](/images/blog/leanercloud-content/weekly-update-20-jan-2023/image-2.png)
+![](/images/blog/leanercloud-content/weekly-update-20-jan-2023/image-2.jpg)
 
 Welcome to this week's progress update. Let's dive right in!
 

@@ -5,11 +5,11 @@ description: "LeanerCloud GUI progress and podcast update"
 author: "Cristian Magherusan-Stanciu"
 categories: ["Updates"]
 tags: ["weekly-update", "gui", "podcast", "leanercloud"]
-featured_image: "/images/blog/leanercloud/weekly-updates.png"
+featured_image: "/images/blog/leanercloud/weekly-updates.jpg"
 draft: false
 ---
 
-![](/images/blog/leanercloud-content/weekly-update-3-feb-2023/image-2.png)
+![](/images/blog/leanercloud-content/weekly-update-3-feb-2023/image-2.jpg)
 
 Hello, and welcome to this week's update.
 

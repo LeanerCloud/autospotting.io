@@ -5,7 +5,7 @@ description: "Terraform updates, Spot Savings Estimator launch, and website impr
 author: "Cristian Magherusan-Stanciu"
 categories: ["Updates", "AutoSpotting"]
 tags: ["weekly-update", "autospotting", "terraform", "savings-estimator", "leanercloud"]
-featured_image: "/images/blog/leanercloud/weekly-updates.png"
+featured_image: "/images/blog/leanercloud/weekly-updates.jpg"
 draft: false
 ---
 

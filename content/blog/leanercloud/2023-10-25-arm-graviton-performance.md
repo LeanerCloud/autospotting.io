@@ -5,7 +5,7 @@ description: "Understanding why Arm-based processors deliver better performance 
 author: "Cristian Magherusan-Stanciu"
 categories: ["AWS", "Graviton", "Performance"]
 tags: ["aws", "graviton", "arm", "x86", "performance", "cost-optimization", "leanercloud"]
-featured_image: "/images/blog/leanercloud/2023-10-25-arm-graviton-performance.png"
+featured_image: "/images/blog/leanercloud/2023-10-25-arm-graviton-performance.jpg"
 draft: false
 ---
 

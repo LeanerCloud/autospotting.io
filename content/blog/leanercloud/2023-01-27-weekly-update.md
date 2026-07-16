@@ -5,7 +5,7 @@ description: "LeanerCloud GUI development begins, website simplification, and in
 author: "Cristian Magherusan-Stanciu"
 categories: ["Updates"]
 tags: ["weekly-update", "gui", "infrastructure", "podcast", "leanercloud"]
-featured_image: "/images/blog/leanercloud/weekly-updates.png"
+featured_image: "/images/blog/leanercloud/weekly-updates.jpg"
 draft: false
 ---
 

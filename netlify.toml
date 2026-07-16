@@ -36,6 +36,27 @@ to = "https://autospotting.io/:splat"
 status = 301
 force = true
 
+# Legacy URLs from the previous autospotting.io and autospotting.org sites
+[[redirects]]
+from = "/faq"
+to = "/#faq"
+status = 301
+
+[[redirects]]
+from = "/faq.html"
+to = "/#faq"
+status = 301
+
+[[redirects]]
+from = "/products"
+to = "/#pricing"
+status = 301
+
+[[redirects]]
+from = "/author/*"
+to = "/blog/"
+status = 301
+
 [[headers]]
 for = "/*"
 

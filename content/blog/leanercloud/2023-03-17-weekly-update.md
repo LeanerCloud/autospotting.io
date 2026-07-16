@@ -5,7 +5,7 @@ description: "AutoSpotting architecture improvements driven by large enterprise 
 author: "Cristian Magherusan-Stanciu"
 categories: ["Updates", "AutoSpotting"]
 tags: ["weekly-update", "autospotting", "aws", "architecture", "eventbridge", "leanercloud"]
-featured_image: "/images/blog/leanercloud/weekly-updates.png"
+featured_image: "/images/blog/leanercloud/weekly-updates.jpg"
 draft: false
 ---
 

@@ -5,7 +5,7 @@ description: "LeanerCloud GUI development progress and outreach to AutoSpotting 
 author: "Cristian Magherusan-Stanciu"
 categories: ["Updates", "AutoSpotting"]
 tags: ["weekly-update", "autospotting", "gui", "community", "leanercloud"]
-featured_image: "/images/blog/leanercloud/weekly-updates.png"
+featured_image: "/images/blog/leanercloud/weekly-updates.jpg"
 draft: false
 ---
 

@@ -5,11 +5,11 @@ description: "New year kickoff with AWS Marketplace reporting tool development a
 author: "Cristian Magherusan-Stanciu"
 categories: ["Updates", "EBS-Optimizer"]
 tags: ["weekly-update", "aws-marketplace", "chatgpt", "ebs-optimizer", "leanercloud"]
-featured_image: "/images/blog/leanercloud/weekly-updates.png"
+featured_image: "/images/blog/leanercloud/weekly-updates.jpg"
 draft: false
 ---
 
-![](/images/blog/leanercloud-content/weekly-update-6-jan-2023/image-2.png)
+![](/images/blog/leanercloud-content/weekly-update-6-jan-2023/image-2.jpg)
 
 Hi, Happy New Year, and welcome to the first weekly update from 2023 and the first one on Beehiiv!
 

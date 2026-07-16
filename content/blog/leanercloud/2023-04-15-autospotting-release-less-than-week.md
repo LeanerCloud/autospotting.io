@@ -5,7 +5,7 @@ description: "AutoSpotting 1.2.1-0 addresses critical ECS load balancer draining
 author: "Cristian Magherusan-Stanciu"
 categories: ["AutoSpotting", "Releases"]
 tags: ["autospotting", "aws", "ecs", "spot-instances", "load-balancer", "leanercloud"]
-featured_image: "/images/blog/leanercloud/weekly-updates.png"
+featured_image: "/images/blog/leanercloud/weekly-updates.jpg"
 draft: false
 ---
 

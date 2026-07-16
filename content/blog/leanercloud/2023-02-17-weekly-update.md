@@ -5,7 +5,7 @@ description: "Re-launching AutoSpotting OSS, instance type data improvements, an
 author: "Cristian Magherusan-Stanciu"
 categories: ["Updates", "AutoSpotting"]
 tags: ["weekly-update", "autospotting", "open-source", "community-edition", "leanercloud"]
-featured_image: "/images/blog/leanercloud/weekly-updates.png"
+featured_image: "/images/blog/leanercloud/weekly-updates.jpg"
 draft: false
 ---
 

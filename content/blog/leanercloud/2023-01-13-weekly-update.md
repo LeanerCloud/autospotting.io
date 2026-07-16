@@ -5,7 +5,7 @@ description: "LinkedIn outreach, EBS Optimizer release, podcast appearance, and 
 author: "Cristian Magherusan-Stanciu"
 categories: ["Updates", "EBS-Optimizer"]
 tags: ["weekly-update", "linkedin", "ebs-optimizer", "podcast", "savings-calculator", "leanercloud"]
-featured_image: "/images/blog/leanercloud/weekly-updates.png"
+featured_image: "/images/blog/leanercloud/weekly-updates.jpg"
 draft: false
 ---
 

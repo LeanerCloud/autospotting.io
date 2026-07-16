@@ -5,7 +5,7 @@ description: "Customer onboarding challenges, parallel instance replacement brea
 author: "Cristian Magherusan-Stanciu"
 categories: ["Updates", "AutoSpotting"]
 tags: ["weekly-update", "autospotting", "aws", "marketplace", "performance", "leanercloud"]
-featured_image: "/images/blog/leanercloud/weekly-updates.png"
+featured_image: "/images/blog/leanercloud/weekly-updates.jpg"
 draft: false
 ---
 
