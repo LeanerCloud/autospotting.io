@@ -3,7 +3,7 @@ module.exports = {
   content: [
     "./layouts/**/*.html",
     "./content/**/*.{html,md}",
-    "/Users/cristi/Library/Caches/hugo_cache/modules/filecache/modules/pkg/mod/github.com/chaoming/hugo-saasify-theme@v1.0.2/layouts/**/*.html"
+    "./_vendor/github.com/chaoming/hugo-saasify-theme/layouts/**/*.html"
   ],
   theme: {
     extend: {
