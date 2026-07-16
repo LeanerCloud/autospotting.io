@@ -1,5 +1,6 @@
 ---
 title: "Another New AutoSpotting Release in Less Than a Week"
+seo_title: "A New AutoSpotting Release in Under a Week"
 date: 2023-04-15T00:00:00+00:00
 description: "AutoSpotting 1.2.1-0 addresses critical ECS load balancer draining issues during Spot terminations"
 author: "Cristian Magherusan-Stanciu"

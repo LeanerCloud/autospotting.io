@@ -1,6 +1,6 @@
 ---
 title: "Releasing Additional Terraform Building Blocks to the LeanerCloud ONCE Bundle"
-seo_title: "More Terraform Building Blocks for LeanerCloud ONCE"
+seo_title: "More Terraform Building Blocks for ONCE"
 date: 2024-06-02T00:00:00+00:00
 description: "Terraform serverless microservice modules added to LeanerCloud ONCE bundle"
 author: "Cristian Magherusan-Stanciu"

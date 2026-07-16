@@ -1,5 +1,6 @@
 ---
 title: "New AutoSpotting Release: Mixed Autoscaling Groups Support"
+seo_title: "Mixed AutoScaling Groups Support Released"
 date: 2023-07-04T00:00:00+00:00
 description: "AutoSpotting now supports AWS AutoScaling groups with Mixed Instances Policy"
 author: "Cristian Magherusan-Stanciu"

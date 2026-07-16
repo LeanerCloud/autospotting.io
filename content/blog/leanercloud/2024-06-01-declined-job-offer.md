@@ -1,5 +1,6 @@
 ---
 title: "Why I Just Declined a Job Offer from a Billionaire Friend"
+seo_title: "Declining a Billionaire Friend's Job Offer"
 date: 2024-06-01T00:00:00+00:00
 description: "Choosing entrepreneurship over corporate employment to build something bigger"
 author: "Cristian Magherusan-Stanciu"

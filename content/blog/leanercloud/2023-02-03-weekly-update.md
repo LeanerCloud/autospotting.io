@@ -1,7 +1,7 @@
 ---
 title: "Weekly Update - 3 Feb 2023"
 date: 2023-02-03T00:00:00+00:00
-description: "LeanerCloud GUI progress and podcast update"
+description: "Weekly update: progress on the LeanerCloud GUI for AutoSpotting, plus a new podcast appearance about AWS cost optimization"
 author: "Cristian Magherusan-Stanciu"
 categories: ["Updates"]
 tags: ["weekly-update", "gui", "podcast", "leanercloud"]

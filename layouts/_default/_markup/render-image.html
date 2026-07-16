@@ -1,2 +1,4 @@
-{{- /* Lazy-load in-content images; they are all below the fold */ -}}
-<img src="{{ .Destination | safeURL }}" alt="{{ .Text }}"{{ with .Title }} title="{{ . }}"{{ end }} loading="lazy" decoding="async">
+{{- /* Lazy-load in-content images; they are all below the fold.
+     Fall back to the page title for alt text when the markdown has none —
+     imperfect, but better for image SEO and screen readers than empty. */ -}}
+<img src="{{ .Destination | safeURL }}" alt="{{ .Text | default (printf "Illustration from: %s" .Page.Title) }}"{{ with .Title }} title="{{ . }}"{{ end }} loading="lazy" decoding="async">

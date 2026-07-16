@@ -1,6 +1,6 @@
 ---
 title: "Vantage Just Updated ec2instances.info and Released All Their Code, Now What?"
-seo_title: "Vantage Released the ec2instances.info Code - Now What?"
+seo_title: "Vantage Open-Sourced ec2instances.info"
 date: 2025-05-26T00:00:00+00:00
 description: "Analyzing Vantage's refreshed ec2instances.info and planning the future of cloud-instances.info fork"
 author: "Cristian Magherusan-Stanciu"
