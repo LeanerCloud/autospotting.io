@@ -72,6 +72,9 @@ enableGitInfo = true
   # Google Analytics 4 (loaded only in production builds)
   googleAnalytics = "G-ZRE3WPMMNK"
 
+  # Crisp chat widget (same website id the old site used)
+  crispWebsiteId = "94bcc89f-c80d-4cf6-905c-e9758fc922b6"
+
   # Global CTA Configuration (disabled for now, we'll use shortcodes)
   [params.cta]
     enable = false
