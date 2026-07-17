@@ -73,7 +73,7 @@ enableGitInfo = true
   googleAnalytics = "G-ZRE3WPMMNK"
 
   # Crisp chat widget (same website id the old site used)
-  crispWebsiteId = "94bcc89f-c80d-4cf6-905c-e9758fc922b6"
+  crispWebsiteId = "ce835c94-3c37-4aac-8bbe-88802bca45dd"
 
   # Global CTA Configuration (disabled for now, we'll use shortcodes)
   [params.cta]
