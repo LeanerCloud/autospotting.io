@@ -11,3 +11,18 @@
     })();
 </script>
 {{ end }}
+
+{{- /* Mouseflow session recording / heatmaps. Loaded only in production
+       builds and only when Site.Params.mouseflow holds a project id, mirroring
+       the Google Analytics gating in baseof.html. */ -}}
+{{ if and hugo.IsProduction .Site.Params.mouseflow }}
+<script>
+    window._mfq = window._mfq || [];
+    (function() {
+        var mf = document.createElement("script");
+        mf.type = "text/javascript"; mf.defer = true;
+        mf.src = "//cdn.mouseflow.com/projects/{{ .Site.Params.mouseflow }}.js";
+        document.getElementsByTagName("head")[0].appendChild(mf);
+    })();
+</script>
+{{ end }}

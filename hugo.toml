@@ -75,6 +75,9 @@ enableGitInfo = true
   # Crisp chat widget (same website id the old site used)
   crispWebsiteId = "94bcc89f-c80d-4cf6-905c-e9758fc922b6"
 
+  # Mouseflow project id (session recording/heatmaps; loaded only in production)
+  mouseflow = "852c59a4-24aa-4c28-9220-2dcd52626807"
+
   # Global CTA Configuration (disabled for now, we'll use shortcodes)
   [params.cta]
     enable = false
