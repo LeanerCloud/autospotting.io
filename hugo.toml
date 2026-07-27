@@ -213,7 +213,7 @@ enableGitInfo = true
   # Footer Column 3 Menu
   [[menu.footer_column_3]]
     name = "Contact Us"
-    url = "mailto:contact@autospotting.io"
+    url = "mailto:contact@autospotting.io?subject=AutoSpotting%20inquiry&body=Hi%20AutoSpotting%20team%2C%0D%0A%0D%0AHow%20can%20we%20help%3F%0D%0A%0D%0A%0D%0AThanks%21"
     weight = 1
   [[menu.footer_column_3]]
     name = "Book a Call"

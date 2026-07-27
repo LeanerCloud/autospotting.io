@@ -343,7 +343,7 @@ client_logos:
     "buttons": [
       {
         "text": "Email Us",
-        "url": "mailto:contact@autospotting.io?subject=AutoSpotting%20Question"
+        "url": "mailto:contact@autospotting.io?subject=Question%20about%20AutoSpotting&body=Hi%20AutoSpotting%20team%2C%0D%0A%0D%0AI%20have%20a%20question%20about%20AutoSpotting%3A%0D%0A%0D%0A%0D%0AA%20bit%20about%20my%20setup%20%28optional%2C%20helps%20us%20answer%20faster%29%3A%0D%0A-%20AWS%20region%28s%29%3A%0D%0A-%20Approx.%20number%20of%20instances%20or%20monthly%20EC2%20spend%3A%0D%0A-%20AutoScaling%20groups%20use%3A%20launch%20templates%20%2F%20launch%20configurations%0D%0A%0D%0AThanks%21"
       },
       {
         "text": "Book a Call",
