@@ -343,7 +343,7 @@ client_logos:
     "buttons": [
       {
         "text": "Email Us",
-        "url": "mailto:support@autospotting.io?subject=AutoSpotting%20Question"
+        "url": "mailto:contact@autospotting.io?subject=AutoSpotting%20Question"
       },
       {
         "text": "Book a Call",
