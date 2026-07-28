@@ -101,57 +101,50 @@ client_logos:
 {{< feature
     title="Production-Ready Reliability"
     description="Automatic failover to on-demand instances ensures your applications stay running even when spot capacity is unavailable."
-    image="/images/features/production.svg"
+    icon="shield"
     features="Zero downtime during spot interruptions,Traffic draining for load balancers,Configurable on-demand instance retention,Trusted by major enterprises worldwide"
-    imagePosition="right"
 >}}
 
 {{< feature
     title="Install in Minutes"
     description="Get started immediately with CloudFormation or Terraform. Tag your existing AutoScaling groups with 'spot-enabled=true' or use our GUI to estimate savings and enable with a single click - no launch template changes required."
-    image="/images/features/friction.svg"
+    icon="bolt"
     features="5-minute installation,Works with existing infrastructure,Deploy across multiple AWS accounts with StackSets,Start saving costs today"
-    imagePosition="left"
 >}}
 
 {{< feature
     title="Your Data Stays Private"
     description="Runs entirely within your AWS account as Lambda functions. No SaaS backend, no external data transmission, minimal IAM permissions required."
-    image="/images/features/security.svg"
+    icon="lock"
     features="Complete data privacy,Full auditability and control,Industry-standard security practices,No vendor access to your infrastructure"
-    imagePosition="right"
 >}}
 
 {{< feature
     title="Works With Your Stack"
     description="Seamless integration with ECS, EKS, Elastic Beanstalk, and any service backed by AutoScaling groups. Fits naturally into your CI/CD pipelines."
-    image="/images/features/compatible.svg"
+    icon="integration"
     features="Zero vendor lock-in,Easy to suspend or remove anytime,Complements existing AWS services,Multi-account support"
-    imagePosition="left"
 >}}
 
 {{< feature
     title="Visual Dashboard & Analytics"
     description="Intuitive web interface to monitor your savings, manage AutoScaling groups, and analyze cost optimization across your AWS infrastructure in real-time."
-    image="/images/savings-estimator.png"
+    icon="chart"
     features="Real-time savings tracking,One-click spot enablement for ASGs,Historical cost analysis and reports,Visual savings estimates before enabling"
-    imagePosition="right"
 >}}
 
 {{< feature
     title="Minimal Cost to Save Big"
     description="Pay only 10% of the savings generated through your AWS bill. Serverless architecture means negligible runtime costs."
-    image="/images/features/cost.svg"
+    icon="tag"
     features="No upfront investment,Pay only for results,Free tier for small installations,Cancel anytime with no penalties"
-    imagePosition="left"
 >}}
 
 {{< feature
     title="Backed By Expert Support"
     description="Stable, tested binaries delivered through AWS Marketplace. Get setup assistance and long-term support from the team that built AutoSpotting."
-    image="/images/features/support.svg"
+    icon="headset"
     features="Priority support for paying customers,Help with installation and optimization,Regular updates and improvements,Dedicated team with deep AWS expertise"
-    imagePosition="right"
 >}}
 
 {{< /features-section >}}
