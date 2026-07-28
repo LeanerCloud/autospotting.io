@@ -292,6 +292,10 @@ client_logos:
   "description": "Everything you need to know about AutoSpotting",
   "questions": [
     {
+      "question": "How is AutoSpotting different from the native AWS Auto Scaling Spot integration?",
+      "answer": "The native AWS approach (a mixed instances policy on the Auto Scaling group) requires you to redesign each group: convert it to a launch template, choose the Spot instance types and allocation strategy, and set the Spot/on-demand split in the group's configuration. AutoSpotting instead works with your existing on-demand groups by simply adding a tag, without changing the group configuration in any way.\n\nKey differences:\n\n- **Automatic on-demand fail-over.** If Spot capacity runs out across all compatible types, AutoSpotting falls back to on-demand instances and returns to Spot once the market recovers. The native integration can leave a group short of capacity when all its configured Spot types are unavailable.\n- **Fleet-wide rollout with no config changes.** Enable it across a whole account or AWS Organization in opt-out mode without converting a single group to launch templates.\n- **Automated instance-type selection.** It picks compatible types based on your existing on-demand instance, so you don't maintain per-group instance-type lists.\n- **Works out of the box** with Spot termination notices, load-balancer draining, and Elastic Beanstalk environments.\n- **No lock-in.** Turn it on or off at will (including from CI/CD or on a schedule) and revert to pure on-demand instantly.\n\nIn fairness, the trade-offs are slightly higher instance churn, a small runtime and maintenance cost, and a usage-based fee if you use the managed binaries rather than building from source."
+    },
+    {
       "question": "How much can I save with AutoSpotting?",
       "answer": "Typical savings are in the 60-90% range for spot-compatible workloads, usually seen when using spot instances. Actual savings depend on your region, instance types used, and spot market conditions."
     },
