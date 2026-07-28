@@ -186,3 +186,8 @@
     @apply list-none ml-4 space-y-2;
   }
 }
+
+/* Offset anchor jumps so targets aren't hidden under the fixed header */
+[id] {
+  scroll-margin-top: 6rem;
+}
