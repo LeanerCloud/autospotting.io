@@ -35,7 +35,7 @@ I'd love to see your feedback on what else y'all want to see in this GUI tool.
 
 For the rest of the week I spent some time improving my web presence, to simplify and clarify it further.
 
-Based on feedback from people I talked a few weeks back, the website was too heavy in information, and then I somehow also broke [autospotting.io](http://autospotting.io/?utm_source=leanercloud.beehiiv.com&utm_medium=referral&utm_campaign=weekly-update-27-jan-2023) through some manual changes and it was down for a couple of days, and I only realized after someone complained about it on Reddit.
+Based on feedback from people I talked a few weeks back, the website was too heavy in information, and then I somehow also broke [autospotting.io](https://autospotting.io/?utm_source=leanercloud.beehiiv.com&utm_medium=referral&utm_campaign=weekly-update-27-jan-2023) through some manual changes and it was down for a couple of days, and I only realized after someone complained about it on Reddit.
 
 So I finally spent on time to fix it and carved out the information on AutoSpotting from [LeanerCloud.com](https://leanercloud.com) and used it to update [AutoSpotting.io](https://autospotting.io).
 

@@ -33,7 +33,7 @@ In a nutshell, I'm going to keep focusing on building major new features in the 
 
 Ideally the delta between my Commercial version and the Community Edition will be kept to a minimum, but I think it needs to be significant enough to have at least some companies pay for it, so I can have a viable business and keep building things like this going forward.
 
-I'll try to also articulate this on the [AutoSpotting.io](http://AutoSpotting.io?utm_source=leanercloud.beehiiv.com&utm_medium=referral&utm_campaign=weekly-update-17-feb-2023) website and will start using the Github issue tracker for my roadmap for both AutoSpotting Community Edition and the commercial offering.
+I'll try to also articulate this on the [AutoSpotting.io](https://AutoSpotting.io?utm_source=leanercloud.beehiiv.com&utm_medium=referral&utm_campaign=weekly-update-17-feb-2023) website and will start using the Github issue tracker for my roadmap for both AutoSpotting Community Edition and the commercial offering.
 
 ### Instance type data updates
 

@@ -19,7 +19,7 @@ I'm excited to announce that a new version of AutoSpotting is now available.
 
 For some context if you're not familiar with AutoSpotting, it's a tool that makes it easy to adopt Spot instances in existing Autoscaling groups, without requiring configuration changes, by replacing their instances with Spot clones using attach/detach API calls.
 
-For more information about AutoSpotting you can have a look at [AutoSpotting.io](http://AutoSpotting.io?utm_source=leanercloud.beehiiv.com&utm_medium=referral&utm_campaign=new-autospotting-release-adding-support-for-mixed-autoscaling-groups) or check out our Open Source code on [GitHub](https://github.com/LeanerCloud/AutoSpotting?utm_source=leanercloud.beehiiv.com&utm_medium=referral&utm_campaign=new-autospotting-release-adding-support-for-mixed-autoscaling-groups).
+For more information about AutoSpotting you can have a look at [AutoSpotting.io](https://AutoSpotting.io?utm_source=leanercloud.beehiiv.com&utm_medium=referral&utm_campaign=new-autospotting-release-adding-support-for-mixed-autoscaling-groups) or check out our Open Source code on [GitHub](https://github.com/LeanerCloud/AutoSpotting?utm_source=leanercloud.beehiiv.com&utm_medium=referral&utm_campaign=new-autospotting-release-adding-support-for-mixed-autoscaling-groups).
 
 ## What's new?
 
