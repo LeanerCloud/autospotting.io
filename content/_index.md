@@ -86,6 +86,8 @@ client_logos:
     secondary_button_text="See Pricing"
     secondary_button_url="/#pricing"
     hero_image="/images/savings-before-after.png"
+    hero_image_alt="AWS EC2 costs before and after installing AutoSpotting"
+    zoom="true"
     gradient-from="#1e40af"
     gradient-to="#7c3aed"
     gradient-angle="135"
