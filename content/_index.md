@@ -106,7 +106,7 @@ client_logos:
 <section id="compare" class="bg-gray-50">
   <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
     <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
-      <h2 class="mb-4 text-3xl md:text-4xl tracking-tight font-extrabold text-gray-900">Four ways to run Spot. One just adds a tag.</h2>
+      <h2 class="mb-4 text-3xl md:text-4xl tracking-tight font-extrabold text-gray-900">Three ways to run Spot. One just adds a tag.</h2>
     </div>
     <div class="overflow-x-auto hidden md:block bg-white rounded-xl border border-gray-200 shadow-sm">
       <table class="w-full min-w-[820px] text-left border-collapse text-sm">
@@ -115,7 +115,6 @@ client_logos:
             <th class="p-3 border-b border-gray-200 font-medium text-gray-500 align-bottom"></th>
             <th class="p-3 border-b border-gray-200 font-bold text-gray-900 align-bottom">Native ASG Spot</th>
             <th class="p-3 border-b border-gray-200 font-bold text-gray-900 align-bottom">Commercial Spot manager</th>
-            <th class="p-3 border-b border-gray-200 font-bold text-gray-900 align-bottom">DIY Spot Fleet</th>
             <th class="p-3 border-b-2 border-primary-600 font-bold text-primary-800 align-bottom bg-primary-50 rounded-t-lg">AutoSpotting</th>
           </tr>
         </thead>
@@ -124,49 +123,42 @@ client_logos:
             <td class="p-3 border-b border-gray-100 font-medium text-gray-900">Setup</td>
             <td class="p-3 border-b border-gray-100">Convert each group to launch templates, pick instance types</td>
             <td class="p-3 border-b border-gray-100">Onboard to their SaaS, adopt their group constructs</td>
-            <td class="p-3 border-b border-gray-100">Build and maintain your own scripts</td>
             <td class="p-3 border-b border-gray-100 bg-primary-50 font-semibold text-primary-800">Add a tag, no config changes</td>
           </tr>
           <tr>
             <td class="p-3 border-b border-gray-100 font-medium text-gray-900">Instance-type selection</td>
             <td class="p-3 border-b border-gray-100">You maintain per-group lists</td>
             <td class="p-3 border-b border-gray-100">Automated</td>
-            <td class="p-3 border-b border-gray-100">Manual</td>
             <td class="p-3 border-b border-gray-100 bg-primary-50 text-gray-900">Automated, based on your existing type</td>
           </tr>
           <tr>
             <td class="p-3 border-b border-gray-100 font-medium text-gray-900">Failover to on-demand</td>
             <td class="p-3 border-b border-gray-100">Limited; the group can run short</td>
             <td class="p-3 border-b border-gray-100">Yes</td>
-            <td class="p-3 border-b border-gray-100">Usually none</td>
             <td class="p-3 border-b border-gray-100 bg-primary-50 text-gray-900">Automatic, and back to Spot when it recovers</td>
           </tr>
           <tr>
             <td class="p-3 border-b border-gray-100 font-medium text-gray-900">Where it runs, your data</td>
             <td class="p-3 border-b border-gray-100">AWS-native</td>
             <td class="p-3 border-b border-gray-100">Their SaaS, with cross-account access</td>
-            <td class="p-3 border-b border-gray-100">Your account</td>
             <td class="p-3 border-b border-gray-100 bg-primary-50 font-semibold text-primary-800">Your account, no SaaS backend</td>
           </tr>
           <tr>
             <td class="p-3 border-b border-gray-100 font-medium text-gray-900">Lock-in</td>
             <td class="p-3 border-b border-gray-100">None, but you re-architected</td>
             <td class="p-3 border-b border-gray-100">Vendor constructs, hard to leave</td>
-            <td class="p-3 border-b border-gray-100">None</td>
             <td class="p-3 border-b border-gray-100 bg-primary-50 text-gray-900">None; remove the tag to revert</td>
           </tr>
           <tr>
             <td class="p-3 border-b border-gray-100 font-medium text-gray-900">Rollout at scale</td>
             <td class="p-3 border-b border-gray-100">Group by group</td>
             <td class="p-3 border-b border-gray-100">Per their onboarding</td>
-            <td class="p-3 border-b border-gray-100">Your effort</td>
             <td class="p-3 border-b border-gray-100 bg-primary-50 text-gray-900">Whole account or AWS Org, opt-out mode</td>
           </tr>
           <tr>
             <td class="p-3 font-medium text-gray-900">Cost</td>
             <td class="p-3">Free</td>
             <td class="p-3">A share of savings, often up to ~20%</td>
-            <td class="p-3">Your engineering time</td>
             <td class="p-3 bg-primary-50 rounded-b-lg font-semibold text-primary-800">10% of savings, or free open source</td>
           </tr>
         </tbody>
@@ -195,18 +187,6 @@ client_logos:
           <div class="py-2"><dt class="text-gray-500">Lock-in</dt><dd class="text-gray-800">Vendor constructs, hard to leave</dd></div>
           <div class="py-2"><dt class="text-gray-500">Rollout at scale</dt><dd class="text-gray-800">Per their onboarding</dd></div>
           <div class="py-2"><dt class="text-gray-500">Cost</dt><dd class="text-gray-800">A share of savings, often up to ~20%</dd></div>
-        </dl>
-      </div>
-      <div class="bg-white border border-gray-200 rounded-lg p-5">
-        <h3 class="font-bold text-gray-900 mb-3">DIY Spot Fleet</h3>
-        <dl class="divide-y divide-gray-100 text-sm">
-          <div class="py-2"><dt class="text-gray-500">Setup</dt><dd class="text-gray-800">Build and maintain your own scripts</dd></div>
-          <div class="py-2"><dt class="text-gray-500">Instance-type selection</dt><dd class="text-gray-800">Manual</dd></div>
-          <div class="py-2"><dt class="text-gray-500">Failover to on-demand</dt><dd class="text-gray-800">Usually none</dd></div>
-          <div class="py-2"><dt class="text-gray-500">Where it runs, your data</dt><dd class="text-gray-800">Your account</dd></div>
-          <div class="py-2"><dt class="text-gray-500">Lock-in</dt><dd class="text-gray-800">None</dd></div>
-          <div class="py-2"><dt class="text-gray-500">Rollout at scale</dt><dd class="text-gray-800">Your effort</dd></div>
-          <div class="py-2"><dt class="text-gray-500">Cost</dt><dd class="text-gray-800">Your engineering time</dd></div>
         </dl>
       </div>
       <div class="border-2 border-primary-600 bg-primary-50 rounded-lg p-5">
@@ -241,7 +221,7 @@ client_logos:
 
 {{< feature
     title="Install in Minutes"
-    description="Get started immediately with CloudFormation or Terraform. Tag your existing AutoScaling groups with 'spot-enabled=true' or use our GUI to estimate savings and enable with a single click - no launch template changes required."
+    description="Get started immediately with CloudFormation or Terraform. Tag your existing AutoScaling groups with 'spot-enabled=true' - no launch template changes required. An experimental GUI to estimate savings and enable with a click is in progress."
     icon="bolt"
     features="5-minute installation,Works with existing infrastructure,Deploy across multiple AWS accounts with StackSets,Start saving costs today"
 >}}
@@ -261,13 +241,6 @@ client_logos:
 >}}
 
 {{< feature
-    title="Visual Dashboard & Analytics"
-    description="Intuitive web interface to monitor your savings, manage AutoScaling groups, and analyze cost optimization across your AWS infrastructure in real-time."
-    icon="chart"
-    features="Real-time savings tracking,One-click spot enablement for ASGs,Historical cost analysis and reports,Visual savings estimates before enabling"
->}}
-
-{{< feature
     title="Minimal Cost to Save Big"
     description="Pay only 10% of the savings generated through your AWS bill. Serverless architecture means negligible runtime costs."
     icon="tag"
@@ -279,6 +252,13 @@ client_logos:
     description="Stable, tested binaries delivered through AWS Marketplace. Get setup assistance and long-term support from the team that built AutoSpotting."
     icon="headset"
     features="Priority support for paying customers,Help with installation and optimization,Regular updates and improvements,Dedicated team with deep AWS expertise"
+>}}
+
+{{< feature
+    title="Visual Dashboard & Analytics (Experimental)"
+    description="An experimental web interface to monitor savings, manage AutoScaling groups, and analyze cost optimization in real time. In progress and off by default for now."
+    icon="chart"
+    features="Real-time savings tracking,One-click spot enablement for ASGs,Historical cost analysis and reports,Visual savings estimates before enabling"
 >}}
 
 {{< /features-section >}}
@@ -348,7 +328,7 @@ client_logos:
 
 <div id="users"></div>
 
-{{< client-logos animate="true" >}}
+{{< client-logos title="Trusted by teams at leading companies worldwide" animate="true" >}}
 
 <div id="pricing"></div>
 
@@ -367,7 +347,8 @@ client_logos:
         "Unlimited customization",
         "No savings limits",
         "Perfect for evaluation",
-        "Must share any software changes with the community"
+        "Must share any software changes with the community",
+        "The commercial version has had many more improvements lately"
       ],
       "button": {
         "text": "Get Started on GitHub",
@@ -379,7 +360,7 @@ client_logos:
       "name": "Pay as you go",
       "description": "10% of monthly savings",
       "features": [
-        "Installs in minutes with GUI installer",
+        "Installs in minutes via CloudFormation or Terraform",
         "Enterprise support included",
         "Charged on your AWS bill",
         "Pay as you go - no upfront costs",
