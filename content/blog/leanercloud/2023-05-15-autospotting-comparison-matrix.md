@@ -1,4 +1,5 @@
 ---
+robots: "index, follow"
 title: "AutoSpotting Comparison Matrix"
 date: 2023-05-15T00:00:00+00:00
 description: "New comparison matrix showing differences between AutoSpotting editions and standard AWS AutoScaling"

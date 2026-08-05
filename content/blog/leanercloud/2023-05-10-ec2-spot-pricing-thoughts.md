@@ -1,4 +1,5 @@
 ---
+robots: "index, follow"
 title: "My Thoughts on the Current State of EC2 Spot Pricing"
 seo_title: "The Current State of EC2 Spot Pricing"
 date: 2023-05-10T00:00:00+00:00

@@ -1,4 +1,5 @@
 ---
+robots: "index, follow"
 title: "New AutoSpotting Release: Mixed Autoscaling Groups Support"
 seo_title: "Mixed AutoScaling Groups Support Released"
 date: 2023-07-04T00:00:00+00:00
