@@ -159,7 +159,7 @@ client_logos:
             <td class="p-3 font-medium text-gray-900">Cost</td>
             <td class="p-3">Free</td>
             <td class="p-3">A share of savings, often up to ~20%</td>
-            <td class="p-3 bg-primary-50 rounded-b-lg font-semibold text-primary-800">10% of savings, or free open source</td>
+            <td class="p-3 bg-primary-50 rounded-b-lg font-semibold text-primary-800">Free open source, or 10% of savings for the more robust, enhanced commercial version</td>
           </tr>
         </tbody>
       </table>
@@ -198,7 +198,7 @@ client_logos:
           <div class="py-2"><dt class="text-gray-500">Where it runs, your data</dt><dd class="text-primary-800 font-semibold">Your account, no SaaS backend</dd></div>
           <div class="py-2"><dt class="text-gray-500">Lock-in</dt><dd class="text-gray-900 font-medium">None; remove the tag to revert</dd></div>
           <div class="py-2"><dt class="text-gray-500">Rollout at scale</dt><dd class="text-gray-900 font-medium">Whole account or AWS Org, opt-out mode</dd></div>
-          <div class="py-2"><dt class="text-gray-500">Cost</dt><dd class="text-primary-800 font-semibold">10% of savings, or free open source</dd></div>
+          <div class="py-2"><dt class="text-gray-500">Cost</dt><dd class="text-primary-800 font-semibold">Free open source, or 10% of savings for the more robust, enhanced commercial version</dd></div>
         </dl>
       </div>
     </div>
