@@ -80,7 +80,7 @@ client_logos:
 
 {{< hero
     headline="Save 60-90% on AWS EC2 Costs"
-    sub_headline="AutoSpotting automatically replaces on-demand instances in AutoScaling groups with Spot clones.<br><br>• Install in minutes<br>• Configure with tags<br>• No launch template changes required"
+    sub_headline="AutoSpotting runs Spot inside your existing AutoScaling groups, with automatic failover to on-demand.<br><br>• No re-architecting, no commitments, no lock-in<br>• Add a tag, install in minutes<br>• Runs in your account, no SaaS backend"
     primary_button_text="Install from AWS Marketplace"
     primary_button_url="https://aws.amazon.com/marketplace/pp/prodview-6uj4pruhgmun6"
     secondary_button_text="See Pricing"
@@ -92,6 +92,138 @@ client_logos:
     gradient-to="#7c3aed"
     gradient-angle="135"
 >}}
+
+<section id="problem" class="bg-white">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+    <div class="mx-auto max-w-screen-md text-center">
+      <h2 class="mb-4 text-3xl md:text-4xl tracking-tight font-extrabold text-gray-900">Spot instances are 60-90% cheaper. So why isn't everything on Spot?</h2>
+      <p class="mb-4 font-light text-gray-500 sm:text-xl">Because doing it safely by hand is hard. Spot capacity can be reclaimed on a two-minute notice, so you have to diversify across instance types, drain load balancers, and fall back to on-demand when capacity runs out.</p>
+      <p class="font-light text-gray-500 sm:text-lg">The usual answers each have a catch: the native AWS tooling makes you re-architect every AutoScaling group, commercial Spot managers put your infrastructure behind their SaaS and lock you in, and Reserved Instances or Savings Plans commit your spend for years. AutoSpotting handles all of it from inside your own account, by adding a tag.</p>
+    </div>
+  </div>
+</section>
+
+<section id="compare" class="bg-gray-50">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+    <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
+      <h2 class="mb-4 text-3xl md:text-4xl tracking-tight font-extrabold text-gray-900">Four ways to run Spot. One just adds a tag.</h2>
+    </div>
+    <div class="overflow-x-auto hidden md:block bg-white rounded-xl border border-gray-200 shadow-sm">
+      <table class="w-full min-w-[820px] text-left border-collapse text-sm">
+        <thead>
+          <tr>
+            <th class="p-3 border-b border-gray-200 font-medium text-gray-500 align-bottom"></th>
+            <th class="p-3 border-b border-gray-200 font-bold text-gray-900 align-bottom">Native ASG Spot</th>
+            <th class="p-3 border-b border-gray-200 font-bold text-gray-900 align-bottom">Commercial Spot manager</th>
+            <th class="p-3 border-b border-gray-200 font-bold text-gray-900 align-bottom">DIY Spot Fleet</th>
+            <th class="p-3 border-b-2 border-primary-600 font-bold text-primary-800 align-bottom bg-primary-50 rounded-t-lg">AutoSpotting</th>
+          </tr>
+        </thead>
+        <tbody class="text-gray-600">
+          <tr>
+            <td class="p-3 border-b border-gray-100 font-medium text-gray-900">Setup</td>
+            <td class="p-3 border-b border-gray-100">Convert each group to launch templates, pick instance types</td>
+            <td class="p-3 border-b border-gray-100">Onboard to their SaaS, adopt their group constructs</td>
+            <td class="p-3 border-b border-gray-100">Build and maintain your own scripts</td>
+            <td class="p-3 border-b border-gray-100 bg-primary-50 font-semibold text-primary-800">Add a tag, no config changes</td>
+          </tr>
+          <tr>
+            <td class="p-3 border-b border-gray-100 font-medium text-gray-900">Instance-type selection</td>
+            <td class="p-3 border-b border-gray-100">You maintain per-group lists</td>
+            <td class="p-3 border-b border-gray-100">Automated</td>
+            <td class="p-3 border-b border-gray-100">Manual</td>
+            <td class="p-3 border-b border-gray-100 bg-primary-50 text-gray-900">Automated, based on your existing type</td>
+          </tr>
+          <tr>
+            <td class="p-3 border-b border-gray-100 font-medium text-gray-900">Failover to on-demand</td>
+            <td class="p-3 border-b border-gray-100">Limited; the group can run short</td>
+            <td class="p-3 border-b border-gray-100">Yes</td>
+            <td class="p-3 border-b border-gray-100">Usually none</td>
+            <td class="p-3 border-b border-gray-100 bg-primary-50 text-gray-900">Automatic, and back to Spot when it recovers</td>
+          </tr>
+          <tr>
+            <td class="p-3 border-b border-gray-100 font-medium text-gray-900">Where it runs, your data</td>
+            <td class="p-3 border-b border-gray-100">AWS-native</td>
+            <td class="p-3 border-b border-gray-100">Their SaaS, with cross-account access</td>
+            <td class="p-3 border-b border-gray-100">Your account</td>
+            <td class="p-3 border-b border-gray-100 bg-primary-50 font-semibold text-primary-800">Your account, no SaaS backend</td>
+          </tr>
+          <tr>
+            <td class="p-3 border-b border-gray-100 font-medium text-gray-900">Lock-in</td>
+            <td class="p-3 border-b border-gray-100">None, but you re-architected</td>
+            <td class="p-3 border-b border-gray-100">Vendor constructs, hard to leave</td>
+            <td class="p-3 border-b border-gray-100">None</td>
+            <td class="p-3 border-b border-gray-100 bg-primary-50 text-gray-900">None; remove the tag to revert</td>
+          </tr>
+          <tr>
+            <td class="p-3 border-b border-gray-100 font-medium text-gray-900">Rollout at scale</td>
+            <td class="p-3 border-b border-gray-100">Group by group</td>
+            <td class="p-3 border-b border-gray-100">Per their onboarding</td>
+            <td class="p-3 border-b border-gray-100">Your effort</td>
+            <td class="p-3 border-b border-gray-100 bg-primary-50 text-gray-900">Whole account or AWS Org, opt-out mode</td>
+          </tr>
+          <tr>
+            <td class="p-3 font-medium text-gray-900">Cost</td>
+            <td class="p-3">Free</td>
+            <td class="p-3">A share of savings, often up to ~20%</td>
+            <td class="p-3">Your engineering time</td>
+            <td class="p-3 bg-primary-50 rounded-b-lg font-semibold text-primary-800">10% of savings, or free open source</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="md:hidden space-y-4 max-w-screen-md mx-auto">
+      <div class="bg-white border border-gray-200 rounded-lg p-5">
+        <h3 class="font-bold text-gray-900 mb-3">Native ASG Spot</h3>
+        <dl class="divide-y divide-gray-100 text-sm">
+          <div class="py-2"><dt class="text-gray-500">Setup</dt><dd class="text-gray-800">Convert each group to launch templates, pick instance types</dd></div>
+          <div class="py-2"><dt class="text-gray-500">Instance-type selection</dt><dd class="text-gray-800">You maintain per-group lists</dd></div>
+          <div class="py-2"><dt class="text-gray-500">Failover to on-demand</dt><dd class="text-gray-800">Limited; the group can run short</dd></div>
+          <div class="py-2"><dt class="text-gray-500">Where it runs, your data</dt><dd class="text-gray-800">AWS-native</dd></div>
+          <div class="py-2"><dt class="text-gray-500">Lock-in</dt><dd class="text-gray-800">None, but you re-architected</dd></div>
+          <div class="py-2"><dt class="text-gray-500">Rollout at scale</dt><dd class="text-gray-800">Group by group</dd></div>
+          <div class="py-2"><dt class="text-gray-500">Cost</dt><dd class="text-gray-800">Free</dd></div>
+        </dl>
+      </div>
+      <div class="bg-white border border-gray-200 rounded-lg p-5">
+        <h3 class="font-bold text-gray-900 mb-3">Commercial Spot manager</h3>
+        <dl class="divide-y divide-gray-100 text-sm">
+          <div class="py-2"><dt class="text-gray-500">Setup</dt><dd class="text-gray-800">Onboard to their SaaS, adopt their group constructs</dd></div>
+          <div class="py-2"><dt class="text-gray-500">Instance-type selection</dt><dd class="text-gray-800">Automated</dd></div>
+          <div class="py-2"><dt class="text-gray-500">Failover to on-demand</dt><dd class="text-gray-800">Yes</dd></div>
+          <div class="py-2"><dt class="text-gray-500">Where it runs, your data</dt><dd class="text-gray-800">Their SaaS, with cross-account access</dd></div>
+          <div class="py-2"><dt class="text-gray-500">Lock-in</dt><dd class="text-gray-800">Vendor constructs, hard to leave</dd></div>
+          <div class="py-2"><dt class="text-gray-500">Rollout at scale</dt><dd class="text-gray-800">Per their onboarding</dd></div>
+          <div class="py-2"><dt class="text-gray-500">Cost</dt><dd class="text-gray-800">A share of savings, often up to ~20%</dd></div>
+        </dl>
+      </div>
+      <div class="bg-white border border-gray-200 rounded-lg p-5">
+        <h3 class="font-bold text-gray-900 mb-3">DIY Spot Fleet</h3>
+        <dl class="divide-y divide-gray-100 text-sm">
+          <div class="py-2"><dt class="text-gray-500">Setup</dt><dd class="text-gray-800">Build and maintain your own scripts</dd></div>
+          <div class="py-2"><dt class="text-gray-500">Instance-type selection</dt><dd class="text-gray-800">Manual</dd></div>
+          <div class="py-2"><dt class="text-gray-500">Failover to on-demand</dt><dd class="text-gray-800">Usually none</dd></div>
+          <div class="py-2"><dt class="text-gray-500">Where it runs, your data</dt><dd class="text-gray-800">Your account</dd></div>
+          <div class="py-2"><dt class="text-gray-500">Lock-in</dt><dd class="text-gray-800">None</dd></div>
+          <div class="py-2"><dt class="text-gray-500">Rollout at scale</dt><dd class="text-gray-800">Your effort</dd></div>
+          <div class="py-2"><dt class="text-gray-500">Cost</dt><dd class="text-gray-800">Your engineering time</dd></div>
+        </dl>
+      </div>
+      <div class="border-2 border-primary-600 bg-primary-50 rounded-lg p-5">
+        <h3 class="font-bold text-primary-800 mb-3">AutoSpotting</h3>
+        <dl class="divide-y divide-primary-100 text-sm">
+          <div class="py-2"><dt class="text-gray-500">Setup</dt><dd class="text-primary-800 font-semibold">Add a tag, no config changes</dd></div>
+          <div class="py-2"><dt class="text-gray-500">Instance-type selection</dt><dd class="text-gray-900 font-medium">Automated, based on your existing type</dd></div>
+          <div class="py-2"><dt class="text-gray-500">Failover to on-demand</dt><dd class="text-gray-900 font-medium">Automatic, and back to Spot when it recovers</dd></div>
+          <div class="py-2"><dt class="text-gray-500">Where it runs, your data</dt><dd class="text-primary-800 font-semibold">Your account, no SaaS backend</dd></div>
+          <div class="py-2"><dt class="text-gray-500">Lock-in</dt><dd class="text-gray-900 font-medium">None; remove the tag to revert</dd></div>
+          <div class="py-2"><dt class="text-gray-500">Rollout at scale</dt><dd class="text-gray-900 font-medium">Whole account or AWS Org, opt-out mode</dd></div>
+          <div class="py-2"><dt class="text-gray-500">Cost</dt><dd class="text-primary-800 font-semibold">10% of savings, or free open source</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
 
 <div id="features"></div>
 
