@@ -10,8 +10,6 @@ featured_image: "/images/blog/leanercloud/2023-05-10-ec2-spot-pricing-thoughts.p
 draft: false
 ---
 
-# My thoughts on the current state of EC2 Spot pricing
-
 ## And what you can do about it
 
 
@@ -21,7 +19,7 @@ I've recently seen a [post](https://news.ycombinator.com/item?id=35802157&utm_so
 
 ![](/images/blog/leanercloud-content/thoughts-current-state-ec2-spot-pricing/image-2.png)
 
-As someone building AWS cost optimization [tooling](http://autospotting.io/?utm_source=leanercloud.beehiiv.com&utm_medium=referral&utm_campaign=my-thoughts-on-the-current-state-of-ec2-spot-pricing) that makes it easy for people to use Spot instances, I'm pretty familiar with this space so thought I'd share my 2 cents about this current situation and wanted to also offer a few suggestions to Spot users who want to still get the most of Spot instances.
+As someone building AWS cost optimization [tooling](https://autospotting.io/?utm_source=leanercloud.beehiiv.com&utm_medium=referral&utm_campaign=my-thoughts-on-the-current-state-of-ec2-spot-pricing) that makes it easy for people to use Spot instances, I'm pretty familiar with this space so thought I'd share my 2 cents about this current situation and wanted to also offer a few suggestions to Spot users who want to still get the most of Spot instances.
 
 I've also seen this first hand during my tests for the recent AutoSpotting releases, and also asked by AutoSpotting customers as soon as this first became apparent. To be honest I didn't really have an answer for them at the time, but I've been thinking about it and I think I have a few suggestions to make to Spot users who want to get decent Spot savings.
 

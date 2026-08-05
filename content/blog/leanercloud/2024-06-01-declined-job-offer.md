@@ -10,8 +10,6 @@ featured_image: "/images/blog/leanercloud/2024-06-01-declined-job-offer.png"
 draft: false
 ---
 
-# Why I just declined a job offer from a billionaire friend
-
 
  June 01, 2024
 

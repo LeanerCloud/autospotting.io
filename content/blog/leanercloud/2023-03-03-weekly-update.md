@@ -53,7 +53,7 @@ I'm very excited about this tool and how easy it makes it to adopt Spot with all
 
 ### Website updates
 
-For the rest of the week I've been working on updating the [autospotting.io](http://autospotting.io?utm_source=leanercloud.beehiiv.com&utm_medium=referral&utm_campaign=weekly-update-3-mar-2023) website and the [AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-6uj4pruhgmun6?utm_source=leanercloud.beehiiv.com&utm_medium=referral&utm_campaign=weekly-update-3-mar-2023) copy to mention the Savings Estimator tool as a convenient way to get started with AutoSpotting.
+For the rest of the week I've been working on updating the [autospotting.io](https://autospotting.io?utm_source=leanercloud.beehiiv.com&utm_medium=referral&utm_campaign=weekly-update-3-mar-2023) website and the [AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-6uj4pruhgmun6?utm_source=leanercloud.beehiiv.com&utm_medium=referral&utm_campaign=weekly-update-3-mar-2023) copy to mention the Savings Estimator tool as a convenient way to get started with AutoSpotting.
 
 As part of this I also did a few small changes to my [AWS Marketplace tool](https://github.com/LeanerCloud/aws-marketplace-cli?utm_source=leanercloud.beehiiv.com&utm_medium=referral&utm_campaign=weekly-update-3-mar-2023) I released the other week, which already saved me some time when updating the copy for the AWS Marketplace.
 
