@@ -114,7 +114,7 @@ client_logos:
           <tr>
             <th class="p-3 border-b border-gray-200 font-medium text-gray-500 align-bottom"></th>
             <th class="p-3 border-b border-gray-200 font-bold text-gray-900 align-bottom">Native ASG Spot</th>
-            <th class="p-3 border-b border-gray-200 font-bold text-gray-900 align-bottom">Commercial Spot manager</th>
+            <th class="p-3 border-b border-gray-200 font-bold text-gray-900 align-bottom">Commercial Spot manager like Spot.io</th>
             <th class="p-3 border-b-2 border-primary-600 font-bold text-primary-800 align-bottom bg-primary-50 rounded-t-lg">AutoSpotting</th>
           </tr>
         </thead>
@@ -178,7 +178,7 @@ client_logos:
         </dl>
       </div>
       <div class="bg-white border border-gray-200 rounded-lg p-5">
-        <h3 class="font-bold text-gray-900 mb-3">Commercial Spot manager</h3>
+        <h3 class="font-bold text-gray-900 mb-3">Commercial Spot manager like Spot.io</h3>
         <dl class="divide-y divide-gray-100 text-sm">
           <div class="py-2"><dt class="text-gray-500">Setup</dt><dd class="text-gray-800">Onboard to their SaaS, adopt their group constructs</dd></div>
           <div class="py-2"><dt class="text-gray-500">Instance-type selection</dt><dd class="text-gray-800">Automated</dd></div>
