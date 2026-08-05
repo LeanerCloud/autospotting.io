@@ -1,4 +1,5 @@
 ---
+robots: "index, follow"
 title: "New AutoSpotting Bugfix Release - 1.3.1"
 date: 2024-04-29T00:00:00+00:00
 description: "Critical fixes for Default VPC placement and Lambda timeout issues"

@@ -1,4 +1,5 @@
 ---
+robots: "index, follow"
 title: "New AutoSpotting Releases"
 date: 2024-04-11T00:00:00+00:00
 description: "AutoSpotting 1.3.0 with new features and 1.2.3 with critical billing fix"
