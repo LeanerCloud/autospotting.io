@@ -173,10 +173,10 @@ enableGitInfo = true
     name = "Pricing"
     url = "/#pricing"
     weight = 3
-  [[menu.main]]
-    name = "Blog"
-    url = "/blog/"
-    weight = 5
+  # [[menu.main]]
+  # name = "Blog"
+  # url = "/blog/"
+  # weight = 5
   [[menu.main]]
     name = "FAQ"
     url = "/#faq"
@@ -197,10 +197,10 @@ enableGitInfo = true
     weight = 3
 
   # Footer Column 2 Menu
-  [[menu.footer_column_2]]
-    name = "Blog"
-    url = "/blog/"
-    weight = 1
+  # [[menu.footer_column_2]]
+  # name = "Blog"
+  # url = "/blog/"
+  # weight = 1
   [[menu.footer_column_2]]
     name = "GitHub"
     url = "https://github.com/AutoSpotting/AutoSpotting"
