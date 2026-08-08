@@ -98,7 +98,7 @@ client_logos:
     <div class="mx-auto max-w-screen-md text-center">
       <h2 class="mb-4 text-3xl md:text-4xl tracking-tight font-extrabold text-gray-900">Spot instances are 60-90% cheaper. So why isn't everything on Spot?</h2>
       <p class="mb-4 font-light text-gray-500 sm:text-xl">Because doing it safely by hand is hard. Spot capacity can be reclaimed on a two-minute notice, so you have to diversify across instance types, drain load balancers, and fall back to on-demand when capacity runs out.</p>
-      <p class="font-light text-gray-500 sm:text-lg">The usual answers each have a catch: the native AWS tooling makes you re-architect every AutoScaling group, commercial Spot managers put your infrastructure behind their SaaS and lock you in, and Reserved Instances or Savings Plans commit your spend for years. AutoSpotting handles all of it from inside your own account, by adding a tag.</p>
+      <p class="font-light text-gray-500 sm:text-lg">The usual answers each have a catch: the native AWS tooling makes you re-architect every AutoScaling group, commercial Spot managers run your infrastructure through their SaaS, and Reserved Instances or Savings Plans commit your spend for years. AutoSpotting handles all of it from inside your own account, by adding a tag.</p>
     </div>
   </div>
 </section>
@@ -114,7 +114,7 @@ client_logos:
           <tr>
             <th class="p-3 border-b border-gray-200 font-medium text-gray-500 align-bottom"></th>
             <th class="p-3 border-b border-gray-200 font-bold text-gray-900 align-bottom">Native ASG Spot</th>
-            <th class="p-3 border-b border-gray-200 font-bold text-gray-900 align-bottom">Commercial Spot manager like Spot.io</th>
+            <th class="p-3 border-b border-gray-200 font-bold text-gray-900 align-bottom">Commercial Spot manager</th>
             <th class="p-3 border-b-2 border-primary-600 font-bold text-primary-800 align-bottom bg-primary-50 rounded-t-lg">AutoSpotting</th>
           </tr>
         </thead>
@@ -133,7 +133,7 @@ client_logos:
           </tr>
           <tr>
             <td class="p-3 border-b border-gray-100 font-medium text-gray-900">Failover to on-demand</td>
-            <td class="p-3 border-b border-gray-100">Limited; the group can run short</td>
+            <td class="p-3 border-b border-gray-100">No automatic fallback to on-demand once all configured Spot pools are exhausted</td>
             <td class="p-3 border-b border-gray-100">Yes</td>
             <td class="p-3 border-b border-gray-100 bg-primary-50 text-gray-900">Automatic, and back to Spot when it recovers</td>
           </tr>
@@ -170,7 +170,7 @@ client_logos:
         <dl class="divide-y divide-gray-100 text-sm">
           <div class="py-2"><dt class="text-gray-500">Setup</dt><dd class="text-gray-800">Convert each group to launch templates, pick instance types</dd></div>
           <div class="py-2"><dt class="text-gray-500">Instance-type selection</dt><dd class="text-gray-800">You maintain per-group lists</dd></div>
-          <div class="py-2"><dt class="text-gray-500">Failover to on-demand</dt><dd class="text-gray-800">Limited; the group can run short</dd></div>
+          <div class="py-2"><dt class="text-gray-500">Failover to on-demand</dt><dd class="text-gray-800">No automatic fallback once all configured Spot pools are exhausted</dd></div>
           <div class="py-2"><dt class="text-gray-500">Where it runs, your data</dt><dd class="text-gray-800">AWS-native</dd></div>
           <div class="py-2"><dt class="text-gray-500">Lock-in</dt><dd class="text-gray-800">None, but you re-architected</dd></div>
           <div class="py-2"><dt class="text-gray-500">Rollout at scale</dt><dd class="text-gray-800">Group by group</dd></div>
@@ -178,7 +178,7 @@ client_logos:
         </dl>
       </div>
       <div class="bg-white border border-gray-200 rounded-lg p-5">
-        <h3 class="font-bold text-gray-900 mb-3">Commercial Spot manager like Spot.io</h3>
+        <h3 class="font-bold text-gray-900 mb-3">Commercial Spot manager</h3>
         <dl class="divide-y divide-gray-100 text-sm">
           <div class="py-2"><dt class="text-gray-500">Setup</dt><dd class="text-gray-800">Onboard to their SaaS, adopt their group constructs</dd></div>
           <div class="py-2"><dt class="text-gray-500">Instance-type selection</dt><dd class="text-gray-800">Automated</dd></div>
@@ -216,7 +216,7 @@ client_logos:
     title="Production-Ready Reliability"
     description="Automatic failover to on-demand instances ensures your applications stay running even when spot capacity is unavailable."
     icon="shield"
-    features="Zero downtime during spot interruptions,Traffic draining for load balancers,Configurable on-demand instance retention,Trusted by major enterprises worldwide"
+    features="Automatic failover keeps capacity when Spot is reclaimed,Traffic draining for load balancers,Configurable on-demand instance retention,Trusted by major enterprises worldwide"
 >}}
 
 {{< feature
@@ -348,7 +348,7 @@ client_logos:
         "No savings limits",
         "Perfect for evaluation",
         "Must share any software changes with the community",
-        "The commercial version has had many more improvements lately"
+        "The commercial edition adds tested binaries, enterprise support and the latest enhancements"
       ],
       "button": {
         "text": "Get Started on GitHub",
@@ -406,7 +406,7 @@ client_logos:
   "questions": [
     {
       "question": "How is AutoSpotting different from the native AWS Auto Scaling Spot integration?",
-      "answer": "Many teams run plain single-instance on-demand Auto Scaling groups, on either a legacy launch configuration or a newer launch template. To adopt Spot the native way you have to redesign each of those groups: convert it to a launch template with a mixed instances policy, choose the Spot instance types and allocation strategy, and set the Spot/on-demand split. AutoSpotting instead works with your existing groups as they are, launch configuration or launch template, by simply adding a tag, without changing the group configuration in any way.\n\nKey differences:\n\n- **Automatic on-demand fail-over.** If Spot capacity runs out across all compatible types, AutoSpotting falls back to on-demand instances and returns to Spot once the market recovers. The native integration can leave a group short of capacity when all its configured Spot types are unavailable.\n- **Fleet-wide rollout with no config changes.** Enable it across a whole account or AWS Organization in opt-out mode without converting a single group to launch templates.\n- **Automated instance-type selection.** It picks compatible types based on your existing on-demand instance, so you don't maintain per-group instance-type lists.\n- **Works out of the box** with Spot termination notices, load-balancer draining, and Elastic Beanstalk environments.\n- **No lock-in.** Turn it on or off at will (including from CI/CD or on a schedule) and revert to pure on-demand instantly.\n\nEven if you already run mixed-instances Auto Scaling groups, AutoSpotting still adds the automatic on-demand failover they lack, so you keep capacity when Spot runs dry across your configured pools, which matters most when those pools are not diversified enough.\n\nIn fairness, the trade-offs are a small runtime cost, and a usage-based fee if you use the commercial enhanced version rather than building from source."
+      "answer": "Many teams run plain single-instance on-demand Auto Scaling groups, on either a legacy launch configuration or a newer launch template. To adopt Spot the native way you have to redesign each of those groups: convert it to a launch template with a mixed instances policy, choose the Spot instance types and allocation strategy, and set the Spot/on-demand split. AutoSpotting instead works with your existing groups as they are, launch configuration or launch template, by simply adding a tag, without changing the group configuration in any way.\n\nKey differences:\n\n- **Automatic on-demand fail-over.** If Spot capacity runs out across all compatible types, AutoSpotting falls back to on-demand instances and returns to Spot once the market recovers. The native integration can leave a group short of capacity when all its configured Spot types are unavailable.\n- **Fleet-wide rollout with no config changes.** Enable it across a whole account or AWS Organization in opt-out mode without converting a single group to launch templates.\n- **Automated instance-type selection.** It picks compatible types based on your existing on-demand instance, so you don't maintain per-group instance-type lists.\n- **Works out of the box** with Spot termination notices, load-balancer draining, and Elastic Beanstalk environments.\n- **No lock-in.** Turn it on or off at will (including from CI/CD or on a schedule) and revert to pure on-demand instantly.\n\nEven if you already run mixed-instances Auto Scaling groups, AutoSpotting's on-demand fail-over is more reliable when Spot capacity is tight across several of your configured pools at the same time, a situation common during high-demand periods like the holiday season (Black Friday, year-end). A mixed-instances group only ever draws from its configured Spot pools and can be left short of capacity when all of them are squeezed at once, while AutoSpotting falls back to on-demand instances and returns to Spot once capacity recovers.\n\nIn fairness, the trade-offs are a small runtime cost, and a usage-based fee if you use the commercial enhanced version rather than building from source."
     },
     {
       "question": "How much can I save with AutoSpotting?",
