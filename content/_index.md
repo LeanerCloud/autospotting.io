@@ -398,72 +398,7 @@ client_logos:
 }
 {{< /pricing-table-2 >}}
 
-{{< faq >}}
-{
-  "title": "Frequently Asked Questions",
-  "description": "Everything you need to know about AutoSpotting",
-  "questions": [
-    {
-      "question": "How is AutoSpotting different from the native AWS Auto Scaling Spot integration?",
-      "answer": "Many teams run plain single-instance on-demand Auto Scaling groups, on either a legacy launch configuration or a newer launch template. To adopt Spot the native way you have to redesign each of those groups: convert it to a launch template with a mixed instances policy, choose the Spot instance types and allocation strategy, and set the Spot/on-demand split. AutoSpotting instead works with your existing groups as they are, launch configuration or launch template, by simply adding a tag, without changing the group configuration in any way.\n\nKey differences:\n\n- **Automatic on-demand fail-over.** If Spot capacity runs out across all compatible types, AutoSpotting falls back to on-demand instances and returns to Spot once the market recovers. The native integration can leave a group short of capacity when all its configured Spot types are unavailable.\n- **Fleet-wide rollout with no config changes.** Enable it across a whole account or AWS Organization in opt-out mode without converting a single group to launch templates.\n- **Automated instance-type selection.** It picks compatible types based on your existing on-demand instance, so you don't maintain per-group instance-type lists.\n- **Works out of the box** with Spot termination notices, load-balancer draining, and Elastic Beanstalk environments.\n- **No lock-in.** Turn it on or off at will (including from CI/CD or on a schedule) and revert to pure on-demand instantly.\n\nEven if you already run mixed-instances Auto Scaling groups, AutoSpotting's on-demand fail-over is more reliable when Spot capacity is tight across several of your configured pools at the same time, a situation common during high-demand periods like the holiday season (Black Friday, year-end). A mixed-instances group only ever draws from its configured Spot pools and can be left short of capacity when all of them are squeezed at once, while AutoSpotting falls back to on-demand instances and returns to Spot once capacity recovers.\n\nIn fairness, the trade-offs are a small runtime cost, and a usage-based fee if you use the commercial enhanced version rather than building from source."
-    },
-    {
-      "question": "How much can I save with AutoSpotting?",
-      "answer": "Typical savings are in the 60-90% range for spot-compatible workloads, usually seen when using spot instances. Actual savings depend on your region, instance types used, and spot market conditions."
-    },
-    {
-      "question": "Is AutoSpotting production-ready?",
-      "answer": "Yes. AutoSpotting has been battle-tested since 2016 by thousands of companies including major enterprises like Samsung, Expedia, and Mozilla. It includes diversified failover with automatic revert to on-demand instances when spot capacity becomes unavailable."
-    },
-    {
-      "question": "Do I need to change my infrastructure?",
-      "answer": "No. AutoSpotting works with your existing AutoScaling groups, launch configurations, and launch templates without any changes. Just add the 'spot-enabled=true' tag to your AutoScaling groups."
-    },
-    {
-      "question": "Where does AutoSpotting run?",
-      "answer": "AutoSpotting runs entirely within your AWS account as Lambda functions. There's no SaaS backend and it doesn't send any data externally. You maintain complete control and visibility."
-    },
-    {
-      "question": "How is the commercial version priced?",
-      "answer": "Usage-based pricing: 10% of the savings generated, billed through AWS Marketplace. For every $1000 in monthly spot savings, you pay approximately $100. Includes a perpetual free tier for small instances (T3/T4g nano or micro). Enterprise tier with flat pricing based on footprint is also available."
-    },
-    {
-      "question": "What happens if spot instances aren't available?",
-      "answer": "AutoSpotting automatically falls back to on-demand instances when spot capacity becomes unavailable. You can also configure it to maintain a minimum number of on-demand instances in each AutoScaling group."
-    },
-    {
-      "question": "Does it work with ECS, EKS, or Elastic Beanstalk?",
-      "answer": "Yes. AutoSpotting works with any service backed by AutoScaling groups, including managed services like ECS, EKS, and Elastic Beanstalk. No special configuration needed."
-    },
-    {
-      "question": "Can I use it with load balancers?",
-      "answer": "Absolutely. AutoSpotting properly handles traffic draining for instances behind Elastic Load Balancers (ELB, ALB, NLB) before terminating them."
-    },
-    {
-      "question": "How do I install AutoSpotting?",
-      "answer": "Installation takes just minutes using CloudFormation or Terraform. The commercial version is available directly from AWS Marketplace for even simpler deployment. For the community edition, build from source on GitHub."
-    },
-    {
-      "question": "What if I want to stop using AutoSpotting?",
-      "answer": "No vendor lock-in. Simply uninstall AutoSpotting and your AutoScaling groups will eventually revert to fully on-demand instances. For AWS Marketplace subscriptions, you can cancel anytime."
-    }
-  ],
-  "contact": {
-    "title": "Still have questions?",
-    "description": "If you need help or have any further questions about AutoSpotting, reach out and we'll do our best to help you.",
-    "buttons": [
-      {
-        "text": "Email Us",
-        "url": "mailto:contact@autospotting.io?subject=Question%20about%20AutoSpotting&body=Hi%20AutoSpotting%20team%2C%0D%0A%0D%0AI%20have%20a%20question%20about%20AutoSpotting%3A%0D%0A%0D%0A%0D%0AA%20bit%20about%20my%20setup%20%28optional%2C%20helps%20us%20answer%20faster%29%3A%0D%0A-%20AWS%20region%28s%29%3A%0D%0A-%20Approx.%20number%20of%20instances%20or%20monthly%20EC2%20spend%3A%0D%0A-%20Your%20use%20case%20and%20tech%20stack%20%28e.g.%20API%2C%20backend%2C%20frontend%2C%20batch%20jobs%29%3A%0D%0A%0D%0AThanks%21"
-      },
-      {
-        "text": "Book a Call",
-        "url": "https://calendly.com/cristi-leanercloud/30min"
-      }
-    ]
-  }
-}
-{{< /faq >}}
+{{< faq data="home_faq" />}}
 
 <div id="contact"></div>
 
