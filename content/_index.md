@@ -81,10 +81,10 @@ client_logos:
 {{< hero
     headline="Save 60-90% on AWS EC2 Costs"
     sub_headline="AutoSpotting runs Spot inside your existing AutoScaling groups, with automatic failover to on-demand.<br><br>• No re-architecting, no commitments, no lock-in<br>• Add a tag, install in minutes<br>• Runs in your account, no SaaS backend"
-    primary_button_text="Install from AWS Marketplace"
-    primary_button_url="https://aws.amazon.com/marketplace/pp/prodview-6uj4pruhgmun6"
-    secondary_button_text="See Pricing"
-    secondary_button_url="/#pricing"
+    primary_button_text="Estimate your savings"
+    primary_button_url="https://bit.ly/LCSavingsCalculator"
+    secondary_button_text="Install from AWS Marketplace"
+    secondary_button_url="https://aws.amazon.com/marketplace/pp/prodview-6uj4pruhgmun6"
     hero_image="/images/savings-before-after.png"
     hero_image_alt="AWS EC2 costs before and after installing AutoSpotting"
     zoom="true"
@@ -251,14 +251,14 @@ client_logos:
     title="Backed By Expert Support"
     description="Stable, tested binaries delivered through AWS Marketplace. Get setup assistance and long-term support from the team that built AutoSpotting."
     icon="headset"
-    features="Priority support for paying customers,Help with installation and optimization,Regular updates and improvements,Dedicated team with deep AWS expertise"
+    features="Priority support for paying customers,Help with installation and optimization,Regular updates and improvements,Deep AWS expertise from the people who built AutoSpotting"
 >}}
 
 {{< feature
     title="Visual Dashboard & Analytics (Experimental)"
-    description="An experimental web interface to monitor savings, manage AutoScaling groups, and analyze cost optimization in real time. In progress and off by default for now."
+    description="A web interface to monitor savings, manage AutoScaling groups, and estimate optimizations, aiming to make AutoSpotting even easier to run at scale."
     icon="chart"
-    features="Real-time savings tracking,One-click spot enablement for ASGs,Historical cost analysis and reports,Visual savings estimates before enabling"
+    features="In active development,Off by default until it is stable,Not required: AutoSpotting runs fully from tags"
 >}}
 
 {{< /features-section >}}
@@ -383,7 +383,7 @@ client_logos:
         "Based on your AWS footprint",
         "Priority enterprise support",
         "Custom SLAs available",
-        "Dedicated account management",
+        "A dedicated point of contact",
         "Training and onboarding included",
         "Volume discounts",
         "Annual billing options",
@@ -414,11 +414,11 @@ client_logos:
     },
     {
       "question": "Is AutoSpotting production-ready?",
-      "answer": "Yes! AutoSpotting has been battle-tested since 2016 by thousands of companies including major enterprises like Samsung, Expedia, and Mozilla. It includes diversified failover with automatic revert to on-demand instances when spot capacity becomes unavailable."
+      "answer": "Yes. AutoSpotting has been battle-tested since 2016 by thousands of companies including major enterprises like Samsung, Expedia, and Mozilla. It includes diversified failover with automatic revert to on-demand instances when spot capacity becomes unavailable."
     },
     {
       "question": "Do I need to change my infrastructure?",
-      "answer": "No! AutoSpotting works with your existing AutoScaling groups, launch configurations, and launch templates without any changes. Just add the 'spot-enabled=true' tag to your AutoScaling groups."
+      "answer": "No. AutoSpotting works with your existing AutoScaling groups, launch configurations, and launch templates without any changes. Just add the 'spot-enabled=true' tag to your AutoScaling groups."
     },
     {
       "question": "Where does AutoSpotting run?",
@@ -434,7 +434,7 @@ client_logos:
     },
     {
       "question": "Does it work with ECS, EKS, or Elastic Beanstalk?",
-      "answer": "Yes! AutoSpotting works with any service backed by AutoScaling groups, including managed services like ECS, EKS, and Elastic Beanstalk. No special configuration needed."
+      "answer": "Yes. AutoSpotting works with any service backed by AutoScaling groups, including managed services like ECS, EKS, and Elastic Beanstalk. No special configuration needed."
     },
     {
       "question": "Can I use it with load balancers?",
