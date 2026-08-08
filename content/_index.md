@@ -97,7 +97,7 @@ client_logos:
   <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
     <div class="mx-auto max-w-screen-md text-center">
       <h2 class="mb-4 text-3xl md:text-4xl tracking-tight font-extrabold text-gray-900">Spot instances are 60-90% cheaper. So why isn't everything on Spot?</h2>
-      <p class="mb-4 font-light text-gray-500 sm:text-xl">Because doing it safely by hand is hard. Spot capacity can be reclaimed on a two-minute notice, so you have to diversify across instance types, drain load balancers, and fall back to on-demand when capacity runs out.</p>
+      <p class="mb-4 font-light text-gray-500 sm:text-xl">Because doing it safely by hand is hard. Spot capacity can be reclaimed on a two-minute notice. To handle that safely, you have to diversify across instance types, drain load balancers, and fall back to on-demand when capacity runs out.</p>
       <p class="font-light text-gray-500 sm:text-lg">The usual answers each have a catch: the native AWS tooling makes you re-architect every AutoScaling group, commercial Spot managers run your infrastructure through their SaaS, and Reserved Instances or Savings Plans commit your spend for years. AutoSpotting handles all of it from inside your own account, by adding a tag.</p>
     </div>
   </div>
@@ -284,7 +284,7 @@ client_logos:
       </div>
       <div class="bg-white border rounded-lg p-6 shadow-sm">
         <h3 class="text-xl font-bold text-gray-900 mb-2">Easy adoption at scale</h3>
-        <p class="text-gray-600">Convert to Spot (and back to on-demand) reliably without per-group configuration changes - ideal for large organizations and legacy environments.</p>
+        <p class="text-gray-600">Convert to Spot (and back to on-demand) reliably, without per-group configuration changes. Ideal for large organizations and legacy environments.</p>
       </div>
     </div>
     <div class="mx-auto max-w-screen-md text-center mt-12">
