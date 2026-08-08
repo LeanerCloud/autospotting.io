@@ -221,7 +221,7 @@ client_logos:
 
 {{< feature
     title="Install in Minutes"
-    description="Get started immediately with CloudFormation or Terraform. Tag your existing AutoScaling groups with 'spot-enabled=true' - no launch template changes required. An experimental GUI to estimate savings and enable with a click is in progress."
+    description="Get started immediately with CloudFormation or Terraform. Tag your existing AutoScaling groups with 'spot-enabled=true' - no launch template changes required."
     icon="bolt"
     features="5-minute installation,Works with existing infrastructure,Deploy across multiple AWS accounts with StackSets,Start saving costs today"
 >}}
@@ -339,7 +339,7 @@ client_logos:
   "plans": [
     {
       "name": "Community Edition",
-      "description": "Free and open-source",
+      "description": "Free and open-source. The commercial edition adds tested binaries, enterprise support and the latest enhancements.",
       "features": [
         "Open Source (OSL-3.0 license)",
         "Community support via GitHub",
@@ -347,8 +347,7 @@ client_logos:
         "Unlimited customization",
         "No savings limits",
         "Perfect for evaluation",
-        "Must share any software changes with the community",
-        "The commercial edition adds tested binaries, enterprise support and the latest enhancements"
+        "Must share any software changes with the community"
       ],
       "button": {
         "text": "Get Started on GitHub",
@@ -426,7 +425,7 @@ client_logos:
     },
     {
       "question": "How is the commercial version priced?",
-      "answer": "Usage-based pricing: up to 10% of the savings generated, billed through AWS Marketplace. For every $1000 in monthly spot savings, you pay approximately $100. Includes a perpetual free tier for small instances (T3/T4g nano or micro). Enterprise tier with flat pricing based on footprint is also available."
+      "answer": "Usage-based pricing: 10% of the savings generated, billed through AWS Marketplace. For every $1000 in monthly spot savings, you pay approximately $100. Includes a perpetual free tier for small instances (T3/T4g nano or micro). Enterprise tier with flat pricing based on footprint is also available."
     },
     {
       "question": "What happens if spot instances aren't available?",
@@ -446,7 +445,7 @@ client_logos:
     },
     {
       "question": "What if I want to stop using AutoSpotting?",
-      "answer": "No vendor lock-in! Simply uninstall AutoSpotting and your AutoScaling groups will eventually revert to fully on-demand instances. For AWS Marketplace subscriptions, you can cancel anytime."
+      "answer": "No vendor lock-in. Simply uninstall AutoSpotting and your AutoScaling groups will eventually revert to fully on-demand instances. For AWS Marketplace subscriptions, you can cancel anytime."
     }
   ],
   "contact": {
