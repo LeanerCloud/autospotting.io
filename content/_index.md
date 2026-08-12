@@ -381,9 +381,9 @@ client_logos:
         "Predictable flat monthly fee",
         "Based on your AWS footprint",
         "Priority enterprise support",
-        "Custom SLAs available",
+        "Custom SLAs on request",
         "A dedicated point of contact",
-        "Training and onboarding included",
+        "Onboarding and training available",
         "Volume discounts",
         "Annual billing options",
         "Customizations and whitelabeling available as additional service"
