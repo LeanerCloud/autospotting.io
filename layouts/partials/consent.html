@@ -1,0 +1,121 @@
+{{- /* Cookie consent banner + Google Consent Mode v2 gating.
+
+       Renders only in production. Crisp chat is treated as functional and
+       loads unconditionally when configured. Google Analytics / Ads (Consent
+       Mode v2, defaults denied in baseof.html) and Mouseflow session recording
+       are gated: they stay off until the visitor accepts. The banner appears
+       only when GA or Mouseflow is configured; the choice is stored in
+       localStorage under "cookie_consent" and can be changed via the small
+       "Cookie settings" button. */ -}}
+{{ if and hugo.IsProduction (or site.Params.googleAnalytics site.Params.mouseflow site.Params.crispWebsiteId) }}
+{{ $needsBanner := or site.Params.googleAnalytics site.Params.mouseflow }}
+{{ $privacy := site.GetPage "/privacy" }}
+{{ if $needsBanner }}
+<style>
+  .cc-banner,.cc-reopen{position:fixed;z-index:2147483000;font-family:inherit}
+  .cc-banner{left:0;right:0;bottom:0;background:#0f172a;color:#f1f5f9;padding:1rem 1.25rem;box-shadow:0 -2px 16px rgba(0,0,0,.25);display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1.25rem}
+  .cc-banner__text{flex:1 1 320px;font-size:.9rem;line-height:1.45;margin:0}
+  .cc-banner__text a{color:#93c5fd;text-decoration:underline}
+  .cc-banner__actions{display:flex;gap:.6rem;flex-wrap:wrap}
+  .cc-btn{cursor:pointer;border:0;border-radius:.5rem;padding:.55rem 1.1rem;font-size:.875rem;font-weight:600;font-family:inherit}
+  .cc-btn--accept{background:#2563eb;color:#fff}
+  .cc-btn--accept:hover{background:#1d4ed8}
+  .cc-btn--decline{background:transparent;color:#e2e8f0;border:1px solid #475569}
+  .cc-btn--decline:hover{background:rgba(255,255,255,.08)}
+  .cc-btn:focus-visible{outline:2px solid #93c5fd;outline-offset:2px}
+  .cc-reopen{left:1rem;bottom:1rem;background:#1e293b;color:#e2e8f0;border:1px solid #475569;border-radius:9999px;padding:.5rem .85rem;font-size:.8rem;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2);display:none}
+  .cc-reopen:hover{background:#334155}
+  .cc-reopen:focus-visible{outline:2px solid #93c5fd;outline-offset:2px}
+  .cc-hidden{display:none!important}
+  @media (max-width:640px){.cc-banner__actions{width:100%}.cc-btn{flex:1 1 auto;text-align:center}}
+</style>
+{{ end }}
+<script>
+(function () {
+  var CRISP = "{{ site.Params.crispWebsiteId }}";
+  // Crisp chat is functional and loads independently of the consent choice.
+  if (CRISP && !window._crispLoaded) {
+    window._crispLoaded = true;
+    window.$crisp = []; window.CRISP_WEBSITE_ID = CRISP;
+    var cs = document.createElement("script");
+    cs.src = "https://client.crisp.chat/l.js"; cs.async = 1;
+    document.head.appendChild(cs);
+  }
+
+  var NEEDS_BANNER = {{ if $needsBanner }}true{{ else }}false{{ end }};
+  if (!NEEDS_BANNER) return;
+
+  var KEY = "cookie_consent";
+  var MF = "{{ site.Params.mouseflow }}";
+  var enabled = false;
+
+  function store(v){ try { localStorage.setItem(KEY, v); } catch (e) {} }
+  function read(){ try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+
+  function loadMouseflow(){
+    if (!MF || window._mfLoaded) return; window._mfLoaded = true;
+    window._mfq = window._mfq || [];
+    var mf = document.createElement("script");
+    mf.type = "text/javascript"; mf.defer = true;
+    mf.src = "//cdn.mouseflow.com/projects/" + MF + ".js";
+    document.head.appendChild(mf);
+  }
+  function grantGtag(){
+    if (typeof gtag !== "function") return;
+    gtag("consent", "update", {
+      "ad_storage": "granted", "ad_user_data": "granted",
+      "ad_personalization": "granted", "analytics_storage": "granted"
+    });
+  }
+  function enableAll(){
+    if (enabled) return; enabled = true;
+    grantGtag(); loadMouseflow();
+  }
+
+  // Returning visitor who already accepted: enable before the UI is built.
+  if (read() === "granted") enableAll();
+
+  function buildUI(){
+    var reopen = document.createElement("button");
+    reopen.className = "cc-reopen"; reopen.type = "button";
+    reopen.textContent = "Cookie settings";
+    reopen.setAttribute("aria-label", "Change cookie preferences");
+
+    var banner = document.createElement("div");
+    banner.className = "cc-banner cc-hidden";
+    banner.setAttribute("role", "dialog");
+    banner.setAttribute("aria-label", "Cookie consent");
+    banner.innerHTML =
+      '<p class="cc-banner__text">We use cookies and similar technologies to analyze traffic and improve your experience. You can accept or decline non-essential cookies.'
+      + {{ with $privacy }}' See our <a href="{{ .RelPermalink }}">Privacy Policy</a>.'{{ else }}''{{ end }}
+      + '</p>'
+      + '<div class="cc-banner__actions">'
+      + '<button type="button" class="cc-btn cc-btn--decline" data-cc="decline">Decline</button>'
+      + '<button type="button" class="cc-btn cc-btn--accept" data-cc="accept">Accept</button>'
+      + '</div>';
+
+    document.body.appendChild(reopen);
+    document.body.appendChild(banner);
+
+    function showBanner(){ banner.classList.remove("cc-hidden"); reopen.style.display = "none"; }
+    function hideBanner(){ banner.classList.add("cc-hidden"); reopen.style.display = "block"; }
+
+    banner.querySelector('[data-cc="accept"]').addEventListener("click", function(){
+      store("granted"); enableAll(); hideBanner();
+    });
+    banner.querySelector('[data-cc="decline"]').addEventListener("click", function(){
+      store("denied"); hideBanner();
+    });
+    reopen.addEventListener("click", showBanner);
+
+    if (read() === null) showBanner(); else hideBanner();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", buildUI);
+  } else {
+    buildUI();
+  }
+})();
+</script>
+{{ end }}
