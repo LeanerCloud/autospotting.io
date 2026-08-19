@@ -1,0 +1,37 @@
+{
+  "id": "faq",
+  "title": "AWS Spot Instance Pricing FAQ",
+  "description": "Common questions about how Spot pricing works and how to capture it",
+  "questions": [
+    {
+      "question": "How much cheaper are Spot instances?",
+      "answer": "Spot instances typically cost 60-90% less than On-Demand for the same instance type. It is the identical hardware; only the price and the fact that AWS can reclaim the capacity differ. The exact discount depends on the region, the instance type, the Availability Zone, and how much spare capacity is available at the time."
+    },
+    {
+      "question": "How is Spot pricing determined?",
+      "answer": "AWS sets the Spot price for each instance type in each Availability Zone, based on long-term supply and demand for spare EC2 capacity. Since 2017 those prices adjust gradually instead of spiking through a bidding war, so there is no bid to set or manage. You pay whatever the Spot price is while your instance runs, billed by the second like On-Demand."
+    },
+    {
+      "question": "What happens when a Spot instance is reclaimed?",
+      "answer": "When EC2 needs the capacity back, it interrupts the instance and sends a two-minute warning through the instance metadata and Amazon EventBridge. Your workload should drain connections and checkpoint any work within that window. AutoSpotting handles this for you: it drains load balancer traffic before the instance goes away, and falls back to On-Demand when Spot capacity is short across every compatible pool, returning to Spot once the market recovers."
+    },
+    {
+      "question": "How do I get Spot pricing without managing it myself?",
+      "answer": "AutoSpotting runs as Lambda functions inside your own AWS account and converts your existing Auto Scaling groups to Spot when you add a single tag. It selects compatible instance types based on the On-Demand instance you already run, diversifies across them, drains traffic before interruptions, and fails over to On-Demand automatically. There are no launch template changes and no SaaS backend, and removing the tag reverts the group to plain On-Demand."
+    }
+  ],
+  "contact": {
+    "title": "Still have questions?",
+    "description": "If you need help estimating your Spot savings or planning a rollout, reach out and we'll do our best to help.",
+    "buttons": [
+      {
+        "text": "Email Us",
+        "url": "mailto:contact@autospotting.io?subject=Question%20about%20Spot%20instance%20pricing&body=Hi%20AutoSpotting%20team%2C%0D%0A%0D%0AI%20have%20a%20question%20about%20AWS%20Spot%20instance%20pricing%3A%0D%0A%0D%0A"
+      },
+      {
+        "text": "Book a Call",
+        "url": "https://calendly.com/cristi-leanercloud/30min"
+      }
+    ]
+  }
+}

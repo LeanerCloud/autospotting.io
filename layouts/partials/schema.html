@@ -50,4 +50,12 @@
 }}
 {{- with .Params.featured_image }}{{- $post = merge $post (dict "image" (absURL .)) }}{{- end }}
 <script type="application/ld+json">{{ $post | jsonify | safeJS }}</script>
+{{- else if .Params.faq_data -}}
+{{- with (index hugo.Data .Params.faq_data) }}
+{{- $items := slice }}
+{{- range .questions }}
+{{- $items = $items | append (dict "@type" "Question" "name" .question "acceptedAnswer" (dict "@type" "Answer" "text" .answer)) }}
+{{- end }}
+<script type="application/ld+json">{{ (dict "@context" $schemaOrg "@type" "FAQPage" "mainEntity" $items) | jsonify | safeJS }}</script>
+{{- end }}
 {{- end -}}
