@@ -34,6 +34,7 @@ url: "/spot-for-kubernetes-ecs/"
 
     <h2>Where it fits with Karpenter and Cluster Autoscaler</h2>
     <p>Kubernetes has its own scaling tools. Cluster Autoscaler and Karpenter provision nodes in response to pending pods, and Karpenter can request Spot capacity directly. AutoSpotting operates at the AutoScaling group layer, so it is the right fit when your nodes are backed by managed node groups or self-managed groups and you want Spot with on-demand fallback without adopting a different provisioner or re-architecting your node setup. For ECS, Elastic Beanstalk, and any other AutoScaling-group-backed service, it is the same tag on the same kind of group.</p>
+    <p>One caveat worth knowing: EKS managed node groups running Spot, and the native Auto Scaling group Spot integration in general, do not fall back to on-demand when Spot is exhausted across all configured instance types. They launch fewer nodes instead, so the cluster silently drops to reduced capacity until Spot frees up, often during high-demand periods such as the end-of-year holiday season. AutoSpotting fails over to on-demand automatically, so the group keeps full capacity.</p>
   </div>
 </section>
 
