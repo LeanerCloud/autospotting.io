@@ -106,7 +106,7 @@ client_logos:
 <section id="compare" class="bg-gray-50">
   <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
     <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
-      <h2 class="mb-4 text-3xl md:text-4xl tracking-tight font-extrabold text-gray-900">Three ways to run Spot. One just adds a tag.</h2>
+      <h2 class="mb-4 text-3xl md:text-4xl tracking-tight font-extrabold text-gray-900">Three ways to run Spot, and the simplest needs a single tag.</h2>
     </div>
     <div class="overflow-x-auto hidden md:block bg-white rounded-xl border border-gray-200 shadow-sm">
       <table class="w-full min-w-[820px] text-left border-collapse text-sm">
@@ -235,13 +235,13 @@ client_logos:
 
 {{< feature
     title="Works With Your Stack"
-    description="Seamless integration with ECS, EKS, Elastic Beanstalk, and any service backed by AutoScaling groups. Fits naturally into your CI/CD pipelines."
+    description="Integrates with ECS, EKS, Elastic Beanstalk, and any service backed by AutoScaling groups. Fits into your existing CI/CD pipelines."
     icon="integration"
     features="Zero vendor lock-in,Easy to suspend or remove anytime,Complements existing AWS services,Multi-account support"
 >}}
 
 {{< feature
-    title="Minimal Cost to Save Big"
+    title="Pay Only From Savings"
     description="Pay only 10% of the savings generated through your AWS bill. Serverless architecture means negligible runtime costs."
     icon="tag"
     features="No upfront investment,Pay only for results,Free tier for small installations,Cancel anytime with no penalties"
