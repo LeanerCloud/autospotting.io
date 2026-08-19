@@ -2,6 +2,7 @@
        safeJS is required: inside a <script> element html/template applies
        JavaScript escaping, which double-encodes a plain jsonify string. */ -}}
 {{- $schemaOrg := "https://schema.org" -}}
+{{- $marketplaceURL := "https://aws.amazon.com/marketplace/pp/prodview-6uj4pruhgmun6" -}}
 {{- if .IsHome -}}
 <script type="application/ld+json">{{ (dict
   "@context" $schemaOrg
@@ -9,7 +10,7 @@
   "name" "AutoSpotting"
   "url" site.BaseURL
   "logo" (absURL "images/logo.png")
-  "sameAs" (slice "https://github.com/AutoSpotting/AutoSpotting")
+  "sameAs" (slice "https://github.com/AutoSpotting/AutoSpotting" $marketplaceURL)
 ) | jsonify | safeJS }}</script>
 <script type="application/ld+json">{{ (dict
   "@context" $schemaOrg
@@ -18,7 +19,34 @@
   "url" site.BaseURL
   "description" site.Params.description
 ) | jsonify | safeJS }}</script>
-<script type="application/ld+json">{{ (dict
+{{- $reviews := slice }}
+{{- range .Params.testimonials }}
+{{- $reviews = $reviews | append (dict "@type" "Review" "author" (dict "@type" "Person" "name" .name) "reviewBody" .quote) }}
+{{- end }}
+{{- $offers := slice
+  (dict
+    "@type" "Offer"
+    "name" "Community Edition"
+    "price" "0"
+    "priceCurrency" "USD"
+    "description" "Free, open-source (OSL-3.0), self-hosted from source."
+    "url" "https://github.com/AutoSpotting/AutoSpotting"
+  )
+  (dict
+    "@type" "Offer"
+    "name" "Pay as you go"
+    "priceCurrency" "USD"
+    "priceSpecification" (dict
+      "@type" "UnitPriceSpecification"
+      "price" "10"
+      "priceCurrency" "USD"
+      "unitText" "percent of monthly AWS savings generated"
+    )
+    "description" "Usage-based pricing billed through the AWS Marketplace: 10% of the savings AutoSpotting generates on your AWS bill."
+    "url" $marketplaceURL
+  )
+}}
+{{- $app := dict
   "@context" $schemaOrg
   "@type" "SoftwareApplication"
   "name" "AutoSpotting"
@@ -26,9 +54,11 @@
   "operatingSystem" "AWS"
   "url" site.BaseURL
   "description" site.Params.description
-  "offers" (dict "@type" "Offer" "description" "Usage-based pricing through the AWS Marketplace (a share of the savings), with a free open-source edition.")
+  "offers" $offers
   "publisher" (dict "@type" "Organization" "name" "AutoSpotting" "url" site.BaseURL)
-) | jsonify | safeJS }}</script>
+}}
+{{- if gt (len $reviews) 0 }}{{- $app = merge $app (dict "review" $reviews) }}{{- end }}
+<script type="application/ld+json">{{ $app | jsonify | safeJS }}</script>
 {{- with hugo.Data.home_faq }}
 {{- $items := slice }}
 {{- range .questions }}
@@ -50,4 +80,14 @@
 }}
 {{- with .Params.featured_image }}{{- $post = merge $post (dict "image" (absURL .)) }}{{- end }}
 <script type="application/ld+json">{{ $post | jsonify | safeJS }}</script>
+{{- $breadcrumb := dict
+  "@context" $schemaOrg
+  "@type" "BreadcrumbList"
+  "itemListElement" (slice
+    (dict "@type" "ListItem" "position" 1 "name" "Home" "item" site.BaseURL)
+    (dict "@type" "ListItem" "position" 2 "name" "Blog" "item" (absURL "blog/"))
+    (dict "@type" "ListItem" "position" 3 "name" .Title "item" .Permalink)
+  )
+}}
+<script type="application/ld+json">{{ $breadcrumb | jsonify | safeJS }}</script>
 {{- end -}}
