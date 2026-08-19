@@ -1,36 +1,15 @@
-{{- /* Crisp chat widget - enabled by setting params.crispWebsiteId */ -}}
-{{ with .Site.Params.crispWebsiteId }}
-<script type="text/javascript">
-    window.$crisp = [];
-    window.CRISP_WEBSITE_ID = "{{ . }}";
-    (function () {
-        var d = document, s = d.createElement("script");
-        s.src = "https://client.crisp.chat/l.js";
-        s.async = 1;
-        d.getElementsByTagName("head")[0].appendChild(s);
-    })();
-</script>
-{{ end }}
-
-{{- /* Mouseflow session recording / heatmaps. Loaded only in production
-       builds and only when Site.Params.mouseflow holds a project id, mirroring
-       the Google Analytics gating in baseof.html. */ -}}
-{{ if and hugo.IsProduction .Site.Params.mouseflow }}
-<script>
-    window._mfq = window._mfq || [];
-    (function() {
-        var mf = document.createElement("script");
-        mf.type = "text/javascript"; mf.defer = true;
-        mf.src = "//cdn.mouseflow.com/projects/{{ .Site.Params.mouseflow }}.js";
-        document.getElementsByTagName("head")[0].appendChild(mf);
-    })();
-</script>
-{{ end }}
+{{- /* Consent-gated third-party tools (Mouseflow session recording and the
+       Crisp chat widget) are loaded from partials/consent.html only after the
+       visitor accepts cookies. Consent Mode v2 defaults (denied) are set in
+       baseof.html before gtag loads. */ -}}
+{{ partial "consent.html" . }}
 
 {{- /* GA4 conversion tracking for outbound CTAs. Fires a generate_lead event
        when a visitor clicks the signup form or a Book a call (Calendly) link,
        so these off-site clicks can be counted as conversions. Loaded only in
-       production and only when Google Analytics is configured.
+       production and only when Google Analytics is configured. The event fires
+       regardless of consent: under Consent Mode "denied" it is sent as a
+       cookieless ping, which GA4/Ads use for modeled conversions.
        In GA4, mark generate_lead as a Key event to count it as a conversion;
        segment signup vs call by the cta_type event parameter. */ -}}
 {{ if and hugo.IsProduction .Site.Params.googleAnalytics }}
