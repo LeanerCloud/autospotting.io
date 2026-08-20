@@ -75,10 +75,12 @@
     <link rel="preload" href="{{ "fonts/plus-jakarta-sans-700.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="{{ "fonts/fonts.css" | relURL }}">
 
-    <!-- Main CSS - Using pre-compiled TailwindCSS from static directory.
-         Cache-busted per build so returning visitors never get a stale
-         stylesheet against fresh HTML (style.css has a stable filename). -->
-    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}?v={{ now.Unix }}">
+    <!-- Main CSS - compiled Tailwind fingerprinted via Hugo Pipes, so the
+         filename hashes only when the CSS actually changes. Returning visitors
+         keep the cached file across deploys instead of re-downloading it. -->
+    {{ with resources.Get "css/style.css" }}
+    <link rel="stylesheet" href="{{ (. | fingerprint).RelPermalink }}">
+    {{ end }}
 
     <!-- Additional Meta Tags from Front Matter -->
     {{ with .Params.customMeta }}
