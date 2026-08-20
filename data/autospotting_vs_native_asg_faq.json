@@ -1,0 +1,21 @@
+{
+  "title": "AutoSpotting vs native ASG Spot FAQ",
+  "questions": [
+    {
+      "question": "Does the native Auto Scaling group Spot integration fall back to on-demand?",
+      "answer": "Not automatically. When Spot capacity runs out across all of the instance types configured in a mixed instances policy, the group launches fewer instances and runs at reduced capacity until Spot frees up. It does not launch on-demand to make up the difference. AutoSpotting fails over to on-demand automatically, then returns to Spot when capacity recovers."
+    },
+    {
+      "question": "Do I have to convert my groups to launch templates to use AutoSpotting?",
+      "answer": "No. The native Spot integration requires a launch template with a mixed instances policy and per-group instance-type lists. AutoSpotting works from a tag on your existing AutoScaling groups, with no launch-template rewrite and no configuration changes to the group."
+    },
+    {
+      "question": "How does instance-type selection differ?",
+      "answer": "With the native integration you maintain the list of compatible instance types for each group. AutoSpotting selects compatible types automatically based on the on-demand type the group already uses, and diversifies across them to spread interruption risk."
+    },
+    {
+      "question": "Is the native AWS Spot integration free?",
+      "answer": "Yes, the native mixed instances policy is a built-in AWS feature at no extra charge. AutoSpotting has a free open-source Community Edition, and a commercial edition priced at 10% of the savings it generates, billed through the AWS Marketplace. The trade-off is the automatic on-demand fallback, tag-based setup, and fleet-wide rollout that the native integration does not provide."
+    }
+  ]
+}
