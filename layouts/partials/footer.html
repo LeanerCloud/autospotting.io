@@ -9,34 +9,40 @@
                     </a>
                 </div>
                 <div class="flex space-x-3 p-2">
+                    {{ with .Site.Params.social.github }}
+                    <a href="{{ . }}" class="text-gray-600 hover:text-gray-900" target="_blank" rel="noopener noreferrer">
+                        <span class="sr-only">GitHub</span>
+                        <img src="/social/github.svg" alt="GitHub" class="h-5 w-5">
+                    </a>
+                    {{ end }}
                     {{ with .Site.Params.social.linkedin }}
                     <a href="{{ . }}" class="text-gray-600 hover:text-gray-900" target="_blank" rel="noopener noreferrer">
                         <span class="sr-only">LinkedIn</span>
-                        <img src="/images/social/linkedin.svg" alt="LinkedIn" class="h-5 w-5">
+                        <img src="/social/linkedin.svg" alt="LinkedIn" class="h-5 w-5">
                     </a>
                     {{ end }}
                     {{ with .Site.Params.social.twitter }}
                     <a href="{{ . }}" class="text-gray-600 hover:text-gray-900" target="_blank" rel="noopener noreferrer">
                         <span class="sr-only">Twitter (X)</span>
-                        <img src="/images/social/twitter.svg" alt="Twitter" class="h-5 w-5">
+                        <img src="/social/twitter.svg" alt="Twitter" class="h-5 w-5">
                     </a>
                     {{ end }}
                     {{ with .Site.Params.social.youtube }}
                     <a href="{{ . }}" class="text-gray-600 hover:text-gray-900" target="_blank" rel="noopener noreferrer">
                         <span class="sr-only">YouTube</span>
-                        <img src="/images/social/youtube.svg" alt="YouTube" class="h-5 w-5">
+                        <img src="/social/youtube.svg" alt="YouTube" class="h-5 w-5">
                     </a>
                     {{ end }}
                     {{ with .Site.Params.social.facebook }}
                     <a href="{{ . }}" class="text-gray-600 hover:text-gray-900" target="_blank" rel="noopener noreferrer">
                         <span class="sr-only">Facebook</span>
-                        <img src="/images/social/facebook.svg" alt="Facebook" class="h-5 w-5">
+                        <img src="/social/facebook.svg" alt="Facebook" class="h-5 w-5">
                     </a>
                     {{ end }}
                     {{ with .Site.Params.social.instagram }}
                     <a href="{{ . }}" class="text-gray-600 hover:text-gray-900" target="_blank" rel="noopener noreferrer">
                         <span class="sr-only">Instagram</span>
-                        <img src="/images/social/instagram.svg" alt="Instagram" class="h-5 w-5">
+                        <img src="/social/instagram.svg" alt="Instagram" class="h-5 w-5">
                     </a>
                     {{ end }}
                 </div>
@@ -75,10 +81,14 @@
 
         <!-- Bottom -->
         <div class="mt-12 pt-8 border-t border-gray-200">
-            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0">
+            <div class="flex flex-col md:flex-row justify-center items-center gap-x-6 gap-y-3">
                 <p class="text-gray-600 text-sm">
                     © 2016-{{ now.Format "2006" }} {{ .Site.Title }}. All rights reserved.
                 </p>
+                <nav class="flex items-center gap-x-6 text-sm">
+                    <a href="/impressum.html" class="text-gray-600 hover:text-primary-700">Impressum</a>
+                    <a href="/privacy.html" class="text-gray-600 hover:text-primary-700">Privacy Policy</a>
+                </nav>
             </div>
         </div>
     </div>
