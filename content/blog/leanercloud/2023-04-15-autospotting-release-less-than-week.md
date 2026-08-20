@@ -8,6 +8,8 @@ author: "Cristian Magherusan-Stanciu"
 categories: ["AutoSpotting", "Releases"]
 tags: ["autospotting", "aws", "ecs", "spot-instances", "load-balancer", "leanercloud"]
 featured_image: "/images/blog/leanercloud/weekly-updates.jpg"
+featured_image_width: 1200
+featured_image_height: 781
 draft: false
 ---
 

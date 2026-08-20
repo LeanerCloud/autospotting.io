@@ -7,6 +7,8 @@ testimonials:
     company: "Apify"
     company_url: "https://apify.com"
     company_logo: "/images/clients/apify.png"
+    company_logo_width: 376
+    company_logo_height: 91
     avatar: "/images/testimonials/jan-curn.jpg"
     quote: "I think AutoSpotting has by far the best approach to utilizing spot instances that I've seen. With AutoSpotting we're pretty much able to run our whole stateless production workload on spot instances."
   - name: "Andreas Sundström"
@@ -14,6 +16,8 @@ testimonials:
     company: "OhMy"
     company_url: "https://www.ohmy.no"
     company_logo: "/images/clients/ohmy.png"
+    company_logo_width: 206
+    company_logo_height: 96
     avatar: "/images/testimonials/andreas.jpg"
     quote: "Thanks to AutoSpotting we're saving more than 50% of our server costs on AWS"
   - name: "Falko Zurell"
@@ -21,6 +25,8 @@ testimonials:
     company: "HERE Technologies"
     company_url: "https://www.here.com"
     company_logo: "/images/clients/here.png"
+    company_logo_width: 105
+    company_logo_height: 96
     avatar: "/images/testimonials/falko.png"
     quote: "Just deployed my first installation of the AutoSpotting tool… It took only 3 minutes and 5 clicks and now I'm saving 60% of my EC2 cost with Spot instances automagically. Kudos Sir!"
   - name: "Levi McCormick"
@@ -34,6 +40,8 @@ testimonials:
     company: "postale.io"
     company_url: "https://postale.io"
     company_logo: "/images/clients/postale.svg"
+    company_logo_width: 115
+    company_logo_height: 86
     avatar: "/images/testimonials/pierre-alletru.jpg"
     quote: "AutoSpotting is a fantastic service that has exceeded our expectations on what we were looking for: easy conversion to spot, fallback to on-demand, and no lock in. It completely crushes its competitors. Cristian also provided excellent support. Thank you for a job well done!"
   - name: "Jacob Cooper"
@@ -41,41 +49,71 @@ testimonials:
     company: "Flip CX"
     company_url: "https://flipcx.com"
     company_logo: "/images/clients/flipcx.png"
+    company_logo_width: 183
+    company_logo_height: 96
     quote: "This was amazing technical support - thank you!!! I wish I got this from every provider that I worked with, wow."
   - name: "Klas Wikblad"
     title: "CTO, APPRL"
     company: "APPRL"
     company_url: "https://apprl.com"
     company_logo: "/images/clients/apprl.png"
+    company_logo_width: 96
+    company_logo_height: 96
     avatar: "/images/testimonials/klas-wikblad.jpg"
     quote: "AutoSpotting is such a great product, just incredibly smooth and well working. We did not even notice that it was running for several years."
 client_logos:
   - name: "Expedia"
     logo: "/images/clients/expedia.jpg"
+    width: 240
+    height: 96
   - name: "Samsung"
     logo: "/images/clients/samsung.svg"
+    width: 105
+    height: 16
   - name: "Qualcomm"
     logo: "/images/clients/qualcomm.png"
+    width: 251
+    height: 96
   - name: "TED"
     logo: "/images/clients/ted.png"
+    width: 196
+    height: 96
   - name: "Mozilla"
     logo: "/images/clients/mozilla.svg"
+    width: 112
+    height: 32
   - name: "UK Department for Work & Pensions"
     logo: "/images/clients/dwp.png"
+    width: 115
+    height: 96
   - name: "University of Texas"
     logo: "/images/clients/utaustin.png"
+    width: 336
+    height: 96
   - name: "Telefonica"
     logo: "/images/clients/telefonica.png"
+    width: 351
+    height: 96
   - name: "Canal+"
     logo: "/images/clients/canalplus.svg"
+    width: 500
+    height: 125
   - name: "Here Technologies"
     logo: "/images/clients/here.png"
+    width: 105
+    height: 96
   - name: "Apify"
     logo: "/images/clients/apify.png"
+    width: 376
+    height: 91
   - name: "OhMy"
     logo: "/images/clients/ohmy.png"
+    width: 206
+    height: 96
   - name: "Audiomack"
     logo: "/images/clients/audiomack.png"
+    width: 181
+    height: 96
 ---
 
 {{< hero
@@ -97,7 +135,7 @@ client_logos:
   <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
     <div class="mx-auto max-w-screen-md text-center">
       <h2 class="mb-4 text-3xl md:text-4xl tracking-tight font-extrabold text-gray-900">Spot instances are 60-90% cheaper. So why isn't everything on Spot?</h2>
-      <p class="mb-4 font-light text-gray-500 sm:text-xl">Because doing it safely by hand is hard. Spot capacity can be reclaimed on a two-minute notice. To handle that safely, you have to diversify across instance types, drain load balancers, and fall back to on-demand when capacity runs out. For the details, see how <a href="/spot-instance-pricing/" class="text-primary-700 hover:underline">AWS Spot instance pricing</a> works.</p>
+      <p class="mb-4 font-light text-gray-500 sm:text-xl">Because doing it safely by hand is hard. Spot capacity can be <a href="/spot-interruption-handling/" class="text-primary-700 hover:underline">reclaimed on a two-minute notice</a>. To handle that safely, you have to diversify across instance types, drain load balancers, and fall back to on-demand when capacity runs out. For the details, see how <a href="/spot-instance-pricing/" class="text-primary-700 hover:underline">AWS Spot instance pricing</a> works.</p>
       <p class="font-light text-gray-500 sm:text-lg">The usual answers each have a catch: the native AWS tooling makes you re-architect every AutoScaling group, commercial Spot managers run your infrastructure through their SaaS, and Reserved Instances or Savings Plans commit your spend for years. AutoSpotting handles all of it from inside your own account, by adding a tag.</p>
     </div>
   </div>
@@ -107,6 +145,7 @@ client_logos:
   <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
     <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
       <h2 class="mb-4 text-3xl md:text-4xl tracking-tight font-extrabold text-gray-900">Three ways to run Spot, and the simplest needs a single tag.</h2>
+      <p class="font-light text-gray-500 sm:text-lg">See the full <a href="/spot-vs-on-demand/" class="text-primary-700 hover:underline">Spot vs on-demand comparison</a> for a deeper look at the cost and reliability trade-offs.</p>
     </div>
     <div class="overflow-x-auto hidden md:block bg-white rounded-xl border border-gray-200 shadow-sm">
       <table class="w-full min-w-[820px] text-left border-collapse text-sm">
@@ -238,6 +277,8 @@ client_logos:
     description="Integrates with ECS, EKS, Elastic Beanstalk, and any service backed by AutoScaling groups. Fits into your existing CI/CD pipelines."
     icon="integration"
     features="Zero vendor lock-in,Easy to suspend or remove anytime,Complements existing AWS services,Multi-account support"
+    buttonText="Spot for Kubernetes & ECS"
+    buttonLink="/spot-for-kubernetes-ecs/"
 >}}
 
 {{< feature

@@ -7,6 +7,8 @@ author: "Cristian Magherusan-Stanciu"
 categories: ["AutoSpotting", "Releases"]
 tags: ["autospotting", "aws", "bugfix", "releases", "leanercloud"]
 featured_image: "/images/blog/leanercloud/2024-04-29-bugfix-release-1-3-1.jpg"
+featured_image_width: 1292
+featured_image_height: 863
 draft: false
 ---
 

@@ -28,7 +28,9 @@
                          alt="{{ $.Title }}"
                          class="w-full h-auto rounded-lg"
                          loading="eager"
-                         fetchpriority="high">
+                         fetchpriority="high"
+                         width="{{ $.Params.featured_image_width }}"
+                         height="{{ $.Params.featured_image_height }}">
                 </div>
             {{ end }}
 

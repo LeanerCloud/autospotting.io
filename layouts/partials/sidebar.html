@@ -21,15 +21,18 @@
             <div class="space-y-4">
                 {{ $recentCount := .Site.Params.blog.sidebar.recent.count | default 5 }}
                 {{ range first $recentCount (where .Site.RegularPages "Type" "blog") }}
+                    {{ $post := . }}
                     <div class="group">
                         <a href="{{ .RelPermalink }}" class="block">
                             {{ with .Params.featured_image }}
                                 <div class="aspect-w-16 aspect-h-9 mb-3 overflow-hidden rounded-lg">
-                                    <img 
-                                        src="{{ . }}" 
-                                        alt="{{ $.Title }}" 
+                                    <img
+                                        src="{{ . }}"
+                                        alt="{{ $post.Title }}"
                                         class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-300"
                                         loading="lazy"
+                                        width="{{ $post.Params.featured_image_width }}"
+                                        height="{{ $post.Params.featured_image_height }}"
                                     >
                                 </div>
                             {{ end }}

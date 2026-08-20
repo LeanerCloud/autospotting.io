@@ -7,6 +7,8 @@ author: "Cristian Magherusan-Stanciu"
 categories: ["AutoSpotting", "Documentation"]
 tags: ["autospotting", "aws", "autoscaling", "comparison", "leanercloud"]
 featured_image: "/images/blog/leanercloud/2023-05-15-autospotting-comparison-matrix.png"
+featured_image_width: 276
+featured_image_height: 421
 draft: false
 ---
 

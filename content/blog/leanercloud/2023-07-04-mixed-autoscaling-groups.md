@@ -8,6 +8,8 @@ author: "Cristian Magherusan-Stanciu"
 categories: ["AutoSpotting", "AWS", "Releases"]
 tags: ["autospotting", "aws", "autoscaling", "spot-instances", "leanercloud"]
 featured_image: "/images/blog/leanercloud/2023-07-04-mixed-autoscaling-groups.png"
+featured_image_width: 1292
+featured_image_height: 105
 draft: false
 ---
 
