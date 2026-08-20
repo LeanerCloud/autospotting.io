@@ -23,11 +23,18 @@
   .cc-btn--decline{background:transparent;color:#e2e8f0;border:1px solid #475569}
   .cc-btn--decline:hover{background:rgba(255,255,255,.08)}
   .cc-btn:focus-visible{outline:2px solid #93c5fd;outline-offset:2px}
-  .cc-reopen{left:1rem;bottom:1rem;background:#1e293b;color:#e2e8f0;border:1px solid #475569;border-radius:9999px;padding:.5rem .85rem;font-size:.8rem;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2);display:none}
+  .cc-reopen{left:1rem;bottom:1.5rem;background:#1e293b;color:#e2e8f0;border:1px solid #475569;border-radius:9999px;padding:.5rem .85rem;font-size:.8rem;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2);display:none}
   .cc-reopen:hover{background:#334155}
   .cc-reopen:focus-visible{outline:2px solid #93c5fd;outline-offset:2px}
   .cc-hidden{display:none!important}
   @media (max-width:640px){.cc-banner__actions{width:100%}.cc-btn{flex:1 1 auto;text-align:center}}
+</style>
+{{ end }}
+{{ if site.Params.crispWebsiteId }}
+<style>
+  .crisp-caption{position:fixed;z-index:2147482000;right:5.5rem;bottom:1.5rem;background:#1e293b;color:#e2e8f0;border:1px solid #475569;border-radius:9999px;padding:.5rem .85rem;font-size:.8rem;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2);font-family:inherit}
+  .crisp-caption:hover{background:#334155}
+  .crisp-caption:focus-visible{outline:2px solid #93c5fd;outline-offset:2px}
 </style>
 {{ end }}
 <script>
@@ -40,6 +47,23 @@
     var cs = document.createElement("script");
     cs.src = "https://client.crisp.chat/l.js"; cs.async = 1;
     document.head.appendChild(cs);
+  }
+
+  // Small caption pill above the Crisp launcher describing the chat button.
+  if (CRISP) {
+    var buildCrispCaption = function(){
+      if (window._crispCaption) return; window._crispCaption = true;
+      var cap = document.createElement("button");
+      cap.className = "crisp-caption"; cap.type = "button";
+      cap.textContent = "Chat with us";
+      cap.setAttribute("aria-label", "Open chat");
+      cap.addEventListener("click", function(){
+        try { window.$crisp && window.$crisp.push(["do", "chat:open"]); } catch (e) {}
+      });
+      document.body.appendChild(cap);
+    };
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", buildCrispCaption);
+    else buildCrispCaption();
   }
 
   var NEEDS_BANNER = {{ if $needsBanner }}true{{ else }}false{{ end }};
