@@ -1,0 +1,21 @@
+{
+  "title": "AutoSpotting vs Karpenter FAQ",
+  "questions": [
+    {
+      "question": "Are AutoSpotting and Karpenter direct competitors?",
+      "answer": "Not exactly. Karpenter is a Kubernetes-native node provisioner that watches pending pods and launches right-sized nodes, and it can request Spot capacity directly. AutoSpotting works one layer down, at the EC2 AutoScaling group, and converts existing group capacity to Spot with automatic on-demand fallback. They operate at different layers and can suit different situations."
+    },
+    {
+      "question": "When does Karpenter make more sense?",
+      "answer": "Karpenter fits when you want a Kubernetes-native provisioner, you are replacing Cluster Autoscaler, and you want node consolidation and bin-packing driven by pending pods. It replaces your provisioning model, which you then define and operate through NodePools."
+    },
+    {
+      "question": "When does AutoSpotting make more sense?",
+      "answer": "AutoSpotting fits when your nodes run on managed or self-managed node groups you do not want to replace, when you want Spot with automatic on-demand fallback without adopting a new provisioner, and when you also run non-Kubernetes services on AutoScaling groups, such as ECS, Elastic Beanstalk, or plain ASGs, and want one approach across all of them."
+    },
+    {
+      "question": "Can I use both?",
+      "answer": "Yes. Karpenter can manage the Kubernetes clusters where you want a native provisioner, while AutoSpotting brings Spot with on-demand fallback to the AutoScaling groups behind your other clusters and non-Kubernetes services. Choose per workload rather than treating it as a single either-or decision."
+    }
+  ]
+}

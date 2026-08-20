@@ -1,0 +1,21 @@
+{
+  "title": "AutoSpotting vs commercial Spot managers FAQ",
+  "questions": [
+    {
+      "question": "What is the main architectural difference?",
+      "answer": "Commercial Spot managers such as Spot.io run a SaaS backend that connects to your AWS account with cross-account access and manages capacity from their side. AutoSpotting runs entirely inside your own AWS account as Lambda functions, with no SaaS backend and no cross-account access to grant."
+    },
+    {
+      "question": "Is AutoSpotting open source?",
+      "answer": "The AutoSpotting core has been open source since 2016 and is available as the Community Edition under the OSL-3.0 license. A commercial edition adds tested binaries, support, and the latest enhancements, priced at 10% of the savings it generates."
+    },
+    {
+      "question": "Do I have to adopt vendor-specific group constructs?",
+      "answer": "No. AutoSpotting works from a tag on the AutoScaling groups you already run. You do not migrate your groups into a vendor-specific construct, and you can remove the tag to revert at any time."
+    },
+    {
+      "question": "How is AutoSpotting priced?",
+      "answer": "The Community Edition is free and open source. The commercial edition uses usage-based pricing at 10% of the monthly savings it generates on your AWS bill, billed through the AWS Marketplace, with a free tier for small installations. We do not publish other vendors' pricing here, so compare their current terms directly."
+    }
+  ]
+}

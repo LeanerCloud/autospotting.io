@@ -145,7 +145,7 @@ client_logos:
   <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
     <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
       <h2 class="mb-4 text-3xl md:text-4xl tracking-tight font-extrabold text-gray-900">Three ways to run Spot, and the simplest needs a single tag.</h2>
-      <p class="font-light text-gray-500 sm:text-lg">See the full <a href="/spot-vs-on-demand/" class="text-primary-700 hover:underline">Spot vs on-demand comparison</a> for a deeper look at the cost and reliability trade-offs.</p>
+      <p class="font-light text-gray-500 sm:text-lg">See the full <a href="/spot-vs-on-demand/" class="text-primary-700 hover:underline">Spot vs on-demand comparison</a> for a deeper look at the cost and reliability trade-offs, or how AutoSpotting compares to <a href="/autospotting-vs-native-asg-spot/" class="text-primary-700 hover:underline">native ASG Spot</a>.</p>
     </div>
     <div class="overflow-x-auto hidden md:block bg-white rounded-xl border border-gray-200 shadow-sm">
       <table class="w-full min-w-[820px] text-left border-collapse text-sm">
