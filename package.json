@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "AutoSpotting website - AWS cost optimization with automated Spot instance conversion",
   "scripts": {
-    "start": "concurrently \"npx tailwindcss -i assets/css/main.css -o static/css/style.css --watch\" \"hugo server -D\"",
-    "build": "tailwindcss -i assets/css/main.css -o static/css/style.css --minify && hugo --gc --minify"
+    "start": "concurrently \"npx tailwindcss -i assets/css/main.css -o assets/css/style.css --watch\" \"hugo server -D\"",
+    "build": "tailwindcss -i assets/css/main.css -o assets/css/style.css --minify && hugo --gc --minify"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.7",
