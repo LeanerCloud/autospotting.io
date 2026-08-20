@@ -8,6 +8,8 @@ author: "Cristian Magherusan-Stanciu"
 categories: ["AWS", "Cost Optimization"]
 tags: ["aws", "ec2", "spot-instances", "pricing", "leanercloud"]
 featured_image: "/images/blog/leanercloud/2023-05-10-ec2-spot-pricing-thoughts.png"
+featured_image_width: 800
+featured_image_height: 374
 draft: false
 ---
 

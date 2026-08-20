@@ -1,0 +1,21 @@
+{
+  "title": "Spot for Kubernetes and ECS FAQ",
+  "questions": [
+    {
+      "question": "Does AutoSpotting work with EKS and ECS?",
+      "answer": "Yes. AutoSpotting works with any service backed by an EC2 AutoScaling group, including EKS managed node groups, self-managed Kubernetes node pools, ECS container instances, and Elastic Beanstalk. You add a tag to the group, with no launch-template rewrite."
+    },
+    {
+      "question": "Do I have to change my launch templates or node groups?",
+      "answer": "No. AutoSpotting works with your existing AutoScaling groups as they are, whether they use a launch configuration or a launch template. You do not convert them to a mixed instances policy or maintain per-group instance-type lists. Add the tag and remove it to revert."
+    },
+    {
+      "question": "How does it handle ECS draining when a Spot node is reclaimed?",
+      "answer": "It deregisters the instance from its load balancer target group within about 10 seconds of the Spot termination event and extends the same instance and task draining to ECS, so connections drain during the two-minute window rather than being dropped."
+    },
+    {
+      "question": "How does AutoSpotting compare to Karpenter for Spot?",
+      "answer": "Karpenter provisions nodes directly and can request Spot itself. AutoSpotting operates at the AutoScaling group layer, so it fits when your nodes run on managed or self-managed node groups and you want Spot with automatic on-demand fallback without adopting a different provisioner. The same approach covers ECS and Elastic Beanstalk."
+    }
+  ]
+}

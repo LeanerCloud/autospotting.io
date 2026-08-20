@@ -7,6 +7,8 @@ author: "Cristian Magherusan-Stanciu"
 categories: ["AutoSpotting", "Releases"]
 tags: ["autospotting", "aws", "spot-instances", "releases", "leanercloud"]
 featured_image: "/images/blog/leanercloud/2024-04-11-new-autospotting-releases.png"
+featured_image_width: 276
+featured_image_height: 238
 draft: false
 ---
 

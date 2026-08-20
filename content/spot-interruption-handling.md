@@ -3,6 +3,7 @@ title: "Spot Interruption Handling"
 seo_title: "EC2 Spot Interruption Handling: How to Run Spot Safely"
 description: "EC2 Spot interruptions give a two-minute notice, and a higher max price won't stop them. Pick low-interruption types and fail over to on-demand automatically."
 layout: "landing"
+faq_data: "spot_interruption_handling_faq"
 url: "/spot-interruption-handling/"
 ---
 
@@ -39,29 +40,7 @@ url: "/spot-interruption-handling/"
   </div>
 </section>
 
-{{< faq >}}
-{
-  "title": "Spot interruption FAQ",
-  "questions": [
-    {
-      "question": "How much warning do I get before a Spot instance is interrupted?",
-      "answer": "About two minutes. EC2 issues a Spot interruption notice through instance metadata and an EventBridge event, then reclaims the instance roughly two minutes later. That window is enough to drain connections and check-point in-flight work if something acts on the notice."
-    },
-    {
-      "question": "Does setting a higher maximum price prevent interruptions?",
-      "answer": "No. Interruptions are driven by capacity in the specific instance pool, not by your maximum price. A higher price does not stop capacity-based reclamation. Diversifying across instance types and falling back to on-demand are what keep the workload resilient."
-    },
-    {
-      "question": "How do I pick instance types that get interrupted less often?",
-      "answer": "Check the AWS Spot Instance Advisor for the historical interruption frequency of each type and region, and diversify across many compatible pools. AutoSpotting automates this by weighing availability, price, and generation, favoring the most-available recent-generation types."
-    },
-    {
-      "question": "What does AutoSpotting do when an instance is interrupted?",
-      "answer": "It deregisters the instance from its load balancer within about 10 seconds of the termination event so connections drain cleanly, immediately launches replacement Spot instances with diversified on-demand failover behind them, and returns the group to Spot once capacity recovers. ECS instance and task draining is handled the same way."
-    }
-  ]
-}
-{{< /faq >}}
+{{< faq data="spot_interruption_handling_faq" />}}
 
 <section class="bg-gray-50">
   <div class="py-8 px-4 mx-auto max-w-screen-md lg:py-12 lg:px-6">

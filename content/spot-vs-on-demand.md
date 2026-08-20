@@ -3,6 +3,7 @@ title: "Spot vs On-Demand"
 seo_title: "EC2 Spot vs On-Demand: When Each One Makes Sense on AWS"
 description: "EC2 Spot costs 60-90% less than on-demand but can be reclaimed on a two-minute notice. See which workloads fit Spot and how to run it safely with fallback."
 layout: "landing"
+faq_data: "spot_vs_on_demand_faq"
 url: "/spot-vs-on-demand/"
 ---
 
@@ -46,29 +47,7 @@ url: "/spot-vs-on-demand/"
   </div>
 </section>
 
-{{< faq >}}
-{
-  "title": "Spot vs on-demand FAQ",
-  "questions": [
-    {
-      "question": "Is Spot always cheaper than on-demand?",
-      "answer": "Spot is discounted from the on-demand rate for the same instance type, typically by 60-90% for Spot-compatible workloads. The discount varies by region, instance type, and current capacity, but Spot prices are set below on-demand for the same hardware."
-    },
-    {
-      "question": "Does a higher maximum price stop my Spot instance from being interrupted?",
-      "answer": "No. Interruptions are driven by capacity in the specific instance pool, not by your bid. A higher maximum price does not prevent capacity-based reclamation. Diversifying across instance types and falling back to on-demand are the ways to stay resilient."
-    },
-    {
-      "question": "How much can I save by moving a workload to Spot?",
-      "answer": "For Spot-compatible workloads the range is usually 60-90%. Even a relatively small AWS footprint often nets over $1,000 per month. You can estimate your own numbers with the free savings calculator before changing anything."
-    },
-    {
-      "question": "What if Spot capacity runs out?",
-      "answer": "AutoSpotting falls back to on-demand instances when Spot capacity is unavailable across all compatible types, so the AutoScaling group keeps its capacity. It returns to Spot once the market recovers, and you can configure a minimum number of on-demand instances per group."
-    }
-  ]
-}
-{{< /faq >}}
+{{< faq data="spot_vs_on_demand_faq" />}}
 
 <section class="bg-gray-50">
   <div class="py-8 px-4 mx-auto max-w-screen-md lg:py-12 lg:px-6">

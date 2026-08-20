@@ -90,12 +90,22 @@
   )
 }}
 <script type="application/ld+json">{{ $breadcrumb | jsonify | safeJS }}</script>
-{{- else if .Params.faq_data -}}
-{{- with (index hugo.Data .Params.faq_data) }}
+{{- else if eq .Layout "landing" -}}
+{{- $page := dict
+  "@context" $schemaOrg
+  "@type" "WebPage"
+  "headline" .Title
+  "description" .Description
+  "url" .Permalink
+}}
+<script type="application/ld+json">{{ $page | jsonify | safeJS }}</script>
+{{- with .Params.faq_data }}
+{{- with (index hugo.Data .) }}
 {{- $items := slice }}
 {{- range .questions }}
 {{- $items = $items | append (dict "@type" "Question" "name" .question "acceptedAnswer" (dict "@type" "Answer" "text" .answer)) }}
 {{- end }}
 <script type="application/ld+json">{{ (dict "@context" $schemaOrg "@type" "FAQPage" "mainEntity" $items) | jsonify | safeJS }}</script>
+{{- end }}
 {{- end }}
 {{- end -}}
