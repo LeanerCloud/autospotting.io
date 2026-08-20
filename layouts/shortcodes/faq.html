@@ -4,29 +4,29 @@
 {{ else }}
   {{ $data = $.Inner | transform.Unmarshal }}
 {{ end }}
-<section id="{{ $data.id | default "faq" }}" class="bg-white dark:bg-gray-900">
+<section id="{{ $data.id | default "faq" }}" class="bg-white">
     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
         <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
-            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{{ $data.title | default "Frequently Asked Questions" }}</h2>
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">{{ $data.title | default "Frequently Asked Questions" }}</h2>
             {{ with $data.description }}
-            <p class="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">{{ . }}</p>
+            <p class="mb-5 font-light text-gray-500 sm:text-xl">{{ . }}</p>
             {{ end }}
         </div>
 
         <div class="mx-auto max-w-screen-md space-y-8">
             {{ range $data.questions }}
             <div>
-                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">{{ .question }}</h3>
-                <div class="font-light text-gray-500 dark:text-gray-400 sm:text-lg">{{ .answer | markdownify }}</div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">{{ .question }}</h3>
+                <div class="prose prose-slate max-w-none sm:prose-lg prose-p:font-light prose-li:font-light prose-a:text-primary-700 prose-a:font-medium">{{ .answer | markdownify }}</div>
             </div>
             {{ end }}
         </div>
 
         {{ with $data.contact }}
         <div class="mx-auto max-w-screen-md text-center mt-12">
-            <h3 class="mb-2 text-2xl font-bold text-gray-900 dark:text-white">{{ .title | default "Still have questions?" }}</h3>
+            <h3 class="mb-2 text-2xl font-bold text-gray-900">{{ .title | default "Still have questions?" }}</h3>
             {{ with .description }}
-            <p class="mb-6 font-light text-gray-500 sm:text-lg dark:text-gray-400">{{ . }}</p>
+            <p class="mb-6 font-light text-gray-500 sm:text-lg">{{ . }}</p>
             {{ end }}
             <div class="flex flex-wrap justify-center gap-4">
                 {{ range $i, $btn := .buttons }}
