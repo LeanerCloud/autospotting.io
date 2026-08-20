@@ -41,6 +41,7 @@ url: "/spot-vs-on-demand/"
 
     <h2>You do not have to choose one</h2>
     <p>The practical answer for most fleets is a mix: run on Spot when capacity is available, fall back to on-demand when it is not. That is what AutoSpotting does inside your existing AutoScaling groups. It diversifies across compatible instance types to spread interruption risk, drains connections before an instance is reclaimed, and when Spot capacity runs out across all compatible pools it launches on-demand instances so the group keeps its capacity. When Spot recovers, it moves back.</p>
+    <p>This is where AutoSpotting differs from the native Auto Scaling group Spot integration, a caveat few teams know about: the native integration does not fall back to on-demand when Spot runs out across all of your configured instance types. It simply launches fewer instances, so you silently run at reduced capacity until Spot frees up, often exactly when demand is highest, such as the end-of-year holiday season.</p>
     <p>Because it works from a tag on your existing groups and runs entirely in your own AWS account, you can turn it on for a group, measure the savings, and remove the tag to revert to pure on-demand at any time. There is no re-architecting and no cross-account access to grant, which is the design AutoSpotting has kept since it was first built in 2015-2016.</p>
   </div>
 </section>
