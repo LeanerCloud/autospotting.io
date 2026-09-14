@@ -4,6 +4,13 @@
        baseof.html before gtag loads. */ -}}
 {{ partial "consent.html" . }}
 
+{{ if and hugo.IsProduction site.Params.umamiWebsiteId }}
+  {{ if not site.Params.umamiScriptUrl }}
+    {{ errorf "params.umamiScriptUrl is required when params.umamiWebsiteId is configured" }}
+  {{ end }}
+  <script defer src="{{ site.Params.umamiScriptUrl }}" data-website-id="{{ site.Params.umamiWebsiteId }}" crossorigin="anonymous" data-fetch-credentials="omit"></script>
+{{ end }}
+
 {{- /* GA4 conversion tracking for outbound CTAs. Fires a generate_lead event
        when a visitor clicks the signup form or a Book a call (Calendly) link,
        so these off-site clicks can be counted as conversions. Loaded only in

@@ -72,6 +72,10 @@ enableGitInfo = true
   # Google Analytics 4 (loaded only in production builds)
   googleAnalytics = "G-ZRE3WPMMNK"
 
+  # Cookieless analytics, independent of cookie consent; production builds only.
+  umamiScriptUrl = "https://stats.leanercloud.com/data"
+  umamiWebsiteId = "6a236c55-8eef-459f-8984-ab27cf47e2b6"
+
   # Crisp chat widget (same website id the old site used)
   crispWebsiteId = "94bcc89f-c80d-4cf6-905c-e9758fc922b6"
 
